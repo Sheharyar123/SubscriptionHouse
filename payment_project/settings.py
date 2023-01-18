@@ -39,10 +39,12 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sites",
     # Third Party
+    "ckeditor",
     "allauth",
     "allauth.account",
     # Local
     "accounts.apps.AccountsConfig",
+    "products.apps.ProductsConfig",
 ]
 
 MIDDLEWARE = [
