@@ -3,6 +3,8 @@ from django.contrib.auth import get_user_model
 from django.db import models
 import uuid
 
+from django.urls import reverse
+
 User = get_user_model()
 
 
@@ -26,16 +28,19 @@ class Product(models.Model):
     active = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.plan_type
+        return f"{self.plan_type} - {self.title}"
+
+    def get_absolute_url(self):
+        return reverse("products:product_detail", kwargs={"pk": self.pk})
 
 
 class OrderItem(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="order_items")
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="order_items")
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="order_items"
     )
-    # paid
+    paid = models.BooleanField(default=False)
     created_on = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
