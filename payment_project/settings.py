@@ -62,7 +62,7 @@ ROOT_URLCONF = "payment_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -151,3 +151,10 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_LOGOUT_REDIRECT = "/"
+ACCOUNT_LOGOUT_ON_GET = True
+
+# Custom allauth forms
+ACCOUNT_FORMS = {
+    "login": "accounts.forms.CustomLoginForm",
+    "signup": "accounts.forms.CustomSignupForm",
+}

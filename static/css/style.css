@@ -2153,7 +2153,7 @@ ul.bullet-list li::before {
 /* ----- Pricings ----- */
 .pricing_item {
   position: relative;
-  height: 500px;
+  height: 550px;
   padding: 2.5rem 1rem;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
@@ -3910,23 +3910,6 @@ footer .footer_panel p.address > i,
   }
 }
 
-.checkout-form,
-.order-summary {
-  margin-top: 200px;
-}
-
-.get-started,
-.order-summary-heading {
-  margin-bottom: 20px;
-}
-
-.login-link {
-  color: white;
-}
-
-.login-link:hover {
-  color: #cbe245;
-}
 
 .paypal-btn {
   background-color: #d4ab4a;
@@ -3936,3 +3919,19 @@ footer .footer_panel p.address > i,
   width: 100%;
   margin-top: 10px;
 }
+
+.form-margin {
+  margin-top: 180px;
+  margin-bottom: 50px;
+}
+
+.form-title {
+  margin-bottom: 20px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
+
+.auth-form-link:hover {
+  color: #007bff
+}
+

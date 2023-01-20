@@ -1,0 +1,738 @@
+{% extends '_base.html' %}
+{% load static %}
+<!--<a href="javascript:void(0)" class="scrollToTop"><i class="fa fa-angle-up"></i></a>-->
+{% block content %}
+	
+	<!--Slider-->
+	<section class="no-padding no-transition" id="home">
+	<div
+		id="revo_main_wrapper"
+		class="rev_slider_wrapper fullwidthbanner-container"
+	>
+		<!-- START REVOLUTION SLIDER 5.0 auto mode -->
+		<div
+			id="rev_slider_video"
+			class="rev_slider fullwidthabanner"
+			style="display: none"
+			data-version="5.4.1"
+		>
+			<ul>
+			<!-- SLIDE  -->
+			<li data-transition="fade">
+			<div class="rev_overlay"></div>
+			<!-- MAIN IMAGE -->
+			<img
+				src="{% static 'video/thumb.jpg' %}"
+				alt=""
+				data-bgposition="center center"
+				data-bgfit="cover"
+				data-bgparallax="10"
+				class="rev-slidebg"
+			/>
+			<div
+				class="rs-background-video-layer"
+				data-forcerewind="on"
+				data-volume="mute"
+				data-videowidth="100%"
+				data-videoheight="100%"
+				data-videomp4="{% static 'video/video.mp4' %}"
+				data-videopreload="auto"
+				data-videoloop="loopandnoslidestop"
+				data-forceCover="1"
+				data-aspectratio="16:9"
+				data-autoplay="true"
+				data-autoplayonlyfirsttime="false"
+			></div>
+
+			<!-- LAYER NR. 1 -->
+			<div
+				class="tp-caption tp-resizeme"
+				data-x="['center','center','center','center']"
+				data-hoffset="['0','0','0','0']"
+				data-y="['middle','middle','middle','middle']"
+				data-voffset="['-100','-100','-100','-100']"
+				data-whitespace="nowrap"
+				data-responsive_offset="on"
+				data-width="['none','none','none','none']"
+				data-type="text"
+				data-textalign="['center','center','center','center']"
+				data-transform_idle="o:1;"
+				data-transform_in="x:-50px;opacity:0;s:2000;e:Power3.easeOut;"
+				data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;"
+				data-start="1000"
+				data-splitin="none"
+				data-splitout="none"
+			>
+				<h1 class="text-capitalize font-xlight whitecolor font-fourty">
+				Unlock Endless Possibilities
+				</h1>
+			</div>
+			<div
+				class="tp-caption tp-resizeme"
+				data-x="['center','center','center','center']"
+				data-hoffset="['0','0','0','0']"
+				data-y="['middle','middle','middle','middle']"
+				data-voffset="['-30','-30','-30','-30']"
+				data-whitespace="nowrap"
+				data-responsive_offset="on"
+				data-width="['none','none','none','none']"
+				data-type="text"
+				data-textalign="['center','center','center','center']"
+				data-transform_idle="o:1;"
+				data-transform_in="z:0;rX:0;rY:0;rZ:0;sX:0.9;sY:0.9;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
+				data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+				data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;"
+				data-start="1200"
+				data-splitin="none"
+				data-splitout="none"
+			>
+				<h1 class="text-capitalize font-medium whitecolor">
+				Find a Dream Job with Us!
+				</h1>
+			</div>
+			<div
+				class="tp-caption tp-resizeme"
+				data-x="['center','center','center','center']"
+				data-hoffset="['0','0','0','0']"
+				data-y="['middle','middle','middle','middle']"
+				data-voffset="['40','40','40','40']"
+				data-whitespace="nowrap"
+				data-responsive_offset="on"
+				data-width="['none','none','none','none']"
+				data-type="text"
+				data-textalign="['center','center','center','center']"
+				data-transform_idle="o:1;"
+				data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:2000;e:Power4.easeInOut;"
+				data-transform_out="s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
+				data-start="1000"
+				data-splitin="none"
+				data-splitout="none"
+			>
+				<h1 class="text-capitalize font-xlight whitecolor font-fourty">
+				Let's Get Started
+				</h1>
+			</div>
+			<div
+				class="tp-caption tp-resizeme text-center"
+				data-x="['center','center','center','center']"
+				data-hoffset="['0','0','0','0']"
+				data-y="['middle','middle','middle','middle']"
+				data-voffset="['120','120','120','120']"
+				data-responsive_offset="on"
+				data-auto_responsive="on"
+				data-width="['auto', 'auto', 'auto', 'auto']"
+				data-visibility="['on','on','on','on']"
+				data-textAlign="['center','center','center','center']"
+				data-transform_idle="o:1;"
+				data-transform_in="y:[-200%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;s:1500;e:Power3.easeInOut;"
+				data-transform_out="auto:auto;s:1000;e:Power3.easeInOut;"
+				data-mask_in="x:0px;y:0px;s:inherit;e:inherit;"
+				data-mask_out="x:0;y:0;s:inherit;e:inherit;"
+				data-start="2000"
+			>
+				<a href="#aboutus" class="btn_common white_transparent"
+				>Learn More</a
+				>
+			</div>
+			</li>
+			</ul>
+		</div>
+		<!-- END REVOLUTION SLIDER -->
+	</div>
+	</section>
+
+	<!--About US-->
+	<section id="aboutus" class="padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center wow fadeIn" data-wow-delay="300ms">
+			<h2 class="heading darkcolor">
+			<span>Our</span> Services <span class="divider-center"></span>
+			</h2>
+			</div>
+		</div>
+		<div class="icon_wraper row">
+			<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
+			<div class="icon_box text-center margin_tophalf">
+			<i class="fa fa-bar-chart"></i>
+			<h4 class="text-capitalize darkcolor bottom20 margin10">
+				Sales Navigater Coupons
+			</h4>
+			<p class="no_bottom">
+				Sales Navigator is the premier sales-focused tool from LinkedIn that
+				helps sales professionals maximize their efficiency and performance.
+				With its filtering capabilities.
+			</p>
+			</div>
+			</div>
+			<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
+			<div class="icon_box text-center margin_tophalf">
+			<i class="fa fa-server"></i>
+			<h4 class="text-capitalize darkcolor bottom20 margin10">
+				Business Plan Coupons
+			</h4>
+			<p class="no_bottom">
+				LinkedIn's business plan is designed to help professionals achieve
+				their career goals by connecting them with the right people,
+				resources, and opportunities.
+			</p>
+			</div>
+			</div>
+			<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="500ms">
+			<div class="icon_box text-center margin_tophalf">
+			<i class="fa fa-globe"></i>
+			<h4 class="text-capitalize darkcolor bottom20 margin10">
+				Recruiter Premium Coupons
+			</h4>
+			<p class="no_bottom">
+				With Recruiter Premium, you can search LinkedIn's massive network of
+				professionals, create custom job postings, source candidates, and
+				manage your hiring pipeline.
+			</p>
+			</div>
+			</div>
+			<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
+			<div class="icon_box text-center margin_tophalf">
+			<i class="fa fa-support"></i>
+			<h4 class="text-capitalize darkcolor bottom20 margin10">
+				Get Hired Basic
+			</h4>
+			<p class="no_bottom">
+				Are you looking for a new job? Get Hired with our help on LinkedIn!
+				Our team of experienced career advisors can help you by applying on
+				10 companies for job.
+			</p>
+			</div>
+			</div>
+			<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
+			<div class="icon_box text-center margin_tophalf">
+			<i class="fa fa-cubes"></i>
+			<h4 class="text-capitalize darkcolor bottom20 margin10">
+				Get Hired Popular
+			</h4>
+			<p class="no_bottom">
+				Our team can help you create a winning profile, We apply for you on
+				40 companies plus Resume/CV Editing. We help craft a compelling
+				summary that will help you stand out.
+			</p>
+			</div>
+			</div>
+			<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="500ms">
+			<div class="icon_box text-center margin_tophalf">
+			<i class="fa fa-laptop"></i>
+			<h4 class="text-capitalize darkcolor bottom20 margin10">
+				Get Hired Enterprise
+			</h4>
+			<p class="no_bottom">
+				We help you build a powerful network and We apply for you to 60
+				companies with 80% success rate of interview.
+			</p>
+			</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--ABout US-->
+
+	<!--Paralax Background -->
+	<section id="parallax-bg" class="parallax-one parallaxie">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center wow bounceIn">
+			<p class="bottom10 whitecolor">Unleash Opportunities With Us</p>
+			<h1 class="bottom25 whitecolor font-light2">
+			Looking For Help in Getting a Job?
+			</h1>
+			<a
+			href="https://wa.link/fu4pv3"
+			target="_blank"
+			class="btn_common white_transparent"
+			>Contact Now</a
+			>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--Paralax Backgroun ends -->
+
+	<!-- Gallery -->
+	<section id="gallery" class="padding">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-12 text-center">
+			<h2 class="heading heading_space darkcolor">
+			<span>About</span> Us<span class="divider-center"></span>
+			</h2>
+			<div id="project-filter" class="cbp-l-filters dark bottom30"></div>
+			</div>
+		</div>
+		<p id="aboutuspara">
+			Welcome to Subscription House, the premier provider of Coupons services
+			for LinkedIn and other premium services. We are dedicated to helping job
+			seekers land a job quickly and build their career. At Subscription House,
+			we understand the importance of having a strong presence on LinkedIn and
+			other social media platforms, in order to secure the perfect job. We
+			provide comprehensive services to help job seekers maximize their presence
+			on these platforms, giving them the best chances of success. Our services
+			are tailored to meet the individual needs of each job seeker. We offer a
+			variety of services, including job search assistance, resume and cover
+			letter writing, job application advice, interview preparation, and even
+			career guidance. We are proud to be the premier provider of services for
+			LinkedIn and other premium platforms Our team of experienced professionals
+			will guide you through every step of the process, maximizing your chances
+			of success. With our help, you can get the job you want and build your
+			career.
+		</p>
+		<br />
+		<p id="aboutuspara">
+			If you are looking for the best Coupons for LinkedIn and other premium
+			platforms, look no further than Subscription House. We are here to help
+			you find your dream job and launch a successful career.
+		</p>
+	</div>
+	</section>
+	<!-- Gallery -->
+
+	<!--Fun Facts-->
+	<section id="bg-counters" class="parallaxie padding">
+	<div class="container">
+		<h2 class="d-none">hidden</h2>
+		<div class="row number-counters">
+			<div
+			class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
+			data-wow-delay="300ms"
+			>
+			<i class="fa fa-cubes"></i>
+			<strong class="counter" data-to="735">0</strong>
+			<p class="counter">Active Subscribers</p>
+			</div>
+			<div
+			class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
+			data-wow-delay="400ms"
+			>
+			<i class="fa fa-trophy"></i>
+			<strong class="counter" data-to="5362">0</strong>
+			<p class="counter">Jobs Applied</p>
+			</div>
+			<div
+			class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
+			data-wow-delay="500ms"
+			>
+			<i class="fa fa-clock-o"></i>
+			<strong class="counter" data-to="4456">0</strong>
+			<p class="counter">Job Landed</p>
+			</div>
+			<div
+			class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
+			data-wow-delay="600ms"
+			>
+			<i class="fa fa-smile-o"></i>
+			<strong class="counter" data-to="1375">0</strong>
+			<p class="counter">Happy Clients</p>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--Fun Facts-->
+
+	<!--Customers Review-->
+	<section id="reviews" class="padding bg_light">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center wow fadeInDown">
+			<h2 class="heading bottom45 darkcolor">
+			<span>Client</span> Testimonials <span class="divider-center"></span>
+			</h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12">
+			<div
+			id="testimonial-slider"
+			class="owl-carousel"
+			data-bs-interval="10000"
+			>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						I recently purchased a premium Coupons service for Linkedin
+						from this website, and I'm so glad I did. I am thankful
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-1.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">John Smith</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						I've been using this website for a few months now and can't
+						speak highly enough of it. Great prices, great service - and
+						it helps me land a job quickly
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-2.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Jane Doe</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						This website is a great way to get premium Coupons Services at
+						a low cost. I've been able to find a job with their Services
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-3.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Amir Ali</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						Fantastic website! I've been able to get a great job thanks to
+						subscription house. I Highly recommend this site. I am Happy
+						with Services
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-4.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Jannat Mirza</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						Very pleased with this website. Their Coupons services are
+						invaluable and they offer great rates. Would definitely
+						recommend
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-5.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Sidra</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						This website is a great way to get premium Coupons at a low
+						cost. Highly recommend if you're looking to land a job
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-6.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Ryan Miller</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						Great website for job seekers! The LinkedIn Coupons services
+						are great and I've been very pleased with the results. Highly
+						Recommend
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-7.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Ali Ahmad</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						I'm so impressed with service. They offer a great range of
+						Coupons services at a low rate, which has helped me land a
+						job, it took only 1 week
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-8.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Waqas Gondal</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			<div class="item">
+				<div class="testimonial-wrapp">
+				<span class="quoted"><i class="fa fa-quote-right"></i></span>
+				<div class="testimonial-text">
+					<p class="bottom40">
+						This website offers a great range of premium Coupons services
+						at a low rate. I've been able to find and I'm very pleased
+					</p>
+				</div>
+				<div class="testimonial-photo">
+					<img alt="" src="{% static 'images/testimonial-9.jpg' %}" />
+				</div>
+				<h4 class="darkcolor">Haniya Raza</h4>
+				<small class="defaultcolor"></small>
+				</div>
+			</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--Customers Review-->
+
+	<!--Pricings-->
+	<section class="padding" id="pricing">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center wow fadeIn" data-wow-delay="300ms">
+			<h2 class="heading darkcolor">
+			<span>Pricing</span> Tables <span class="divider-center"></span>
+			</h2>
+			<p class="bottom30 margin10">
+			Get the features you need and save money with our flexible pricing
+			plans.
+			</p>
+			</div>
+		</div>
+		<div class="row">
+			{% for product in product_list %}
+				<div class="col-md-4">
+					<div
+					class="pricing_item {{ product.background_type }} text-center top40 wow fadeIn"
+					data-wow-deeay="400ms"
+					>
+						<h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
+						<p class="bottom30">{{ product.title|title }}</p>
+						<div class="pricing_price darkcolor">
+							<span class="pricing_currency">
+								<b>${{ product.price }}</b></span>/{% if product.title == "Business Plan Coupons" %}6month{% else %}month{% endif %}
+							
+						</div>
+						<p>{{ product.description|safe|linebreaks }}</p>
+						<a class="btn_common btn_{{ product.background_type }}" href="#"
+							>Buy Now</a
+						>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	</section>
+	<!--Pricings-->
+
+	<!--FAQ-->
+	<section id="faq" class="padding centerfaq">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+			<h2
+			class="heading heading_space darkcolor font-light2 wow fadeIn"
+			data-wow-delay="300ms"
+			>
+			<span>Frequently</span> Asked<span class="divider-left"></span>
+			</h2>
+			<div class="faq_content">
+			<ul class="items">
+				<li class="wow fadeIn" data-wow-delay="450ms">
+				<a href="javascript:void(0)"
+					>Are there any discounts available for the premium service?</a
+				>
+				<ul class="sub-items">
+					<li>
+						<p>
+						Unfortunately, at this time we do not have a discount policy
+						or refund policy. However, we are always looking for ways to
+						serve our customers better.
+						</p>
+					</li>
+				</ul>
+				</li>
+				<li class="wow fadeIn" data-wow-delay="500ms">
+				<a href="javascript:void(0)"
+					>Is there a way to try the premium service before
+					subscribing?</a
+				>
+				<ul class="sub-items">
+					<li>
+						<p>
+						Unfortunately, there is no way to try the premium service
+						before subscribing. However, LinkedIn and other services
+						offer free 1-month trials, which can give you an indication
+						of the features offered by the premium service before you
+						make a commitment to buy.
+						</p>
+					</li>
+				</ul>
+				</li>
+				<li class="wow fadeIn" data-wow-delay="550ms">
+				<a href="javascript:void(0)"
+					>Is a LinkedIn Coupons worth buying?</a
+				>
+				<ul class="sub-items">
+					<li>
+						<p>
+						If you are looking to connect with a large network of
+						professionals, find job opportunities, and showcase your
+						expertise, then a LinkedIn Coupons could be worth it.
+						</p>
+					</li>
+				</ul>
+				</li>
+				<li class="wow fadeIn" data-wow-delay="550ms">
+				<a href="javascript:void(0)"
+					>What are the different types of LinkedIn accounts?</a
+				>
+				<ul class="sub-items">
+					<li>
+						<p>
+						The three different types of LinkedIn accounts are,
+						<b>Premium Account</b>, <b>Business Account</b>, and
+						<b>Recruiter Account</b>
+						</p>
+					</li>
+				</ul>
+				</li>
+				<li class="wow fadeIn" data-wow-delay="550ms">
+				<a href="javascript:void(0)">How Do I Pay for Coupons?</a>
+				<ul class="sub-items">
+					<li>
+						<p>
+						At Subscription House, we make paying for your Coupons easy!
+						Our website offers several payment options, so you can
+						choose the one that is most convenient for you. We accept
+						all major credit and debit cards, including Visa,
+						Mastercard, American Express, and Discover.
+						</p>
+					</li>
+				</ul>
+				</li>
+			</ul>
+			</div>
+			</div>
+		</div>
+	</div>
+	</section>
+	<!--FAQ ends-->
+
+	<!--FOOTER-->
+	<footer id="contactus" class="padding-top">
+	<div class="container">
+		<div class="row">
+			<div
+			class="col-md-4 col-sm-12 footer_panel heading_space wow fadeIn"
+			data-wow-delay="300ms"
+			>
+			<h3 class="heading bottom30">
+			About Us<span class="divider-left"></span>
+			</h3>
+			<a href="index.html" class="footer_logo bottom25"
+			><img src="{% static 'images/logo-white.png' %}" alt="Webox"
+			/></a>
+			<p>
+			Welcome to Subscription House, We are dedicated to helping job seekers
+			land a job quickly and build their career.
+			</p>
+			<ul class="social_icon top25">
+			<li>
+				<a href="javascript:void(0)"><i class="fa fa-facebook"></i></a>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="fa fa-twitter"></i></a>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="fa fa-dribbble"></i></a>
+			</li>
+			<li>
+				<a href="javascript:void(0)"><i class="fa fa-instagram"></i></a>
+			</li>
+			<li>
+				<a href="https://wa.link/fu4pv3"><i class="fa fa-whatsapp"></i></a>
+			</li>
+			</ul>
+			</div>
+			<div
+			class="col-md-4 col-sm-12 footer_panel heading_space wow fadeIn"
+			data-wow-delay="350ms"
+			>
+			<h3 class="heading bottom30">
+			Quick Links<span class="divider-left"></span>
+			</h3>
+			<div class="row">
+			<div class="col-md-12 col-xs-12">
+				<ul class="links">
+				<li><a href="#home">Home</a></li>
+				<li><a href="#aboutus">Services</a></li>
+				<!-- <li><a href="javascript:void(0)">Our Team</a></li> -->
+				<li><a href="#gallery">About</a></li>
+				<li><a href="#pricing">Packages</a></li>
+				<li><a href="faq">FAQs</a></li>
+				<li><a href="#reviews">Testimonials</a></li>
+				<!-- <li><a href="javascript:void(0)">Privacy Policy</a></li> -->
+				<li><a href="javascript:void(0)">Contact Us</a></li>
+				</ul>
+			</div>
+			</div>
+			</div>
+			<div
+			class="col-md-4 col-sm-12 footer_panel heading_space wow fadeIn"
+			data-wow-delay="400ms"
+			>
+			<h3 class="heading bottom30">
+			Keep in Touch <span class="divider-left"></span>
+			</h3>
+			<p class="address">
+			<i class="fa fa-map-marker"></i>Lahore, Punjab, Pakistan.
+			</p>
+			<p class="address"><i class="fa fa-phone"></i>+92-333-3239757</p>
+			<p class="address">
+			<i class="fa fa-envelope-o"></i
+			><a href="mailto:Webox@info.com">subscriptionhouse.1@gmail.com</a>
+			</p>
+			</div>
+		</div>
+	</div>
+	</footer>
+	<div class="copyright">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center wow fadeInUp" data-wow-delay="300ms">
+			<p>
+			Copyright &copy; 2021 - 2023
+			<a href="javascript:void(0)">subscription House</a>. all rights
+			reserved.
+			</p>
+			</div>
+		</div>
+	</div>
+	</div>
+	<!--FOOTER ends-->
+
+{% endblock content %}

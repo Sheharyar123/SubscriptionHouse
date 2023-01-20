@@ -1,0 +1,33 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans "Sign Up" %}{% endblock %}
+
+{% block content %}
+
+  <div class="container">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="col-10 col-md-8 col-lg-6 form-margin">
+        <h1 class="text-center form-title">{% trans "Register" %}</h1>
+        <form method="POST" action="{% url 'account_signup' %}">
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="form__field">
+                <label class="mb-2">{{ field.label }}</label>
+                {{ field }}
+            </div>
+            {% endfor %} 
+
+          <!-- Submit button -->
+          <button type="submit" class="btn btn-primary btn-block mb-4">Sign Up</button>
+          <!-- Register buttons -->
+          <div class="text-center">
+            <p>Already have an account? <a href="{% url 'account_login' %}" class="auth-form-link">Log In</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
