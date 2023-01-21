@@ -18,12 +18,11 @@ class ProductListView(View):
     def post(self, request, *args, **kwargs):
         form = ContactForm(request.POST)
         if form.is_valid():
-            print(form)
             subject = form.cleaned_data["subject"]
             name = form.cleaned_data["name"]
             email_from = form.cleaned_data["email"]
             phone_no = form.cleaned_data["phone_no"]
-            message = f'{form.cleaned_data["comment"]}. Sent by {name} and Phone No is {phone_no}'
+            message = f'{form.cleaned_data["comment"]}\n\n. Sent by {name}.\nPhone No is {phone_no}'
             receipient_list = [
                 settings.EMAIL_HOST_USER,
             ]
@@ -51,7 +50,7 @@ class ProductDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         product = self.get_object()
         user = self.request.user
-        order_item = OrderItem.objects.create(product=product, paid=False)
+        order_item = OrderItem.objects.create(product=product, user=user, paid=False)
         host = self.request.get_host()
         paypal_dict = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,

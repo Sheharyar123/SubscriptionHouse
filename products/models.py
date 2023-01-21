@@ -38,7 +38,11 @@ class Product(models.Model):
 
 class OrderItem(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="order_items")
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        related_name="order_items",
+    )
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="order_items"
     )
@@ -55,3 +59,15 @@ class OrderItem(models.Model):
         else:
             valid_date = self.created_on + timedelta(days=30)
         return valid_date
+
+    @property
+    def customer_name(self):
+        return self.user.name
+
+    @property
+    def customer_email(self):
+        return self.user.email
+
+    @property
+    def customer_phoneNo(self):
+        return self.user.phone_no
