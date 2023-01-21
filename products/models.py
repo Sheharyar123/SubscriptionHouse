@@ -24,7 +24,7 @@ class Product(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     background_type = models.CharField(choices=BACKGROUND_TYPE, max_length=30)
     plan_type = models.CharField(choices=PLAN_TYPE, max_length=30)
-    price = models.IntegerField()
+    price = models.FloatField()
     title = models.CharField(max_length=50)
     description = RichTextField()
     active = models.BooleanField(default=True)

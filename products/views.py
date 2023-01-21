@@ -1,5 +1,6 @@
 from paypal.standard.forms import PayPalPaymentsForm
 from django.contrib import messages
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
@@ -37,7 +38,7 @@ class ProductListView(View):
             return redirect("products:index")
 
 
-class ProductDetailView(DetailView):
+class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
     template_name = "products/product_detail.html"
     context_object_name = "product"

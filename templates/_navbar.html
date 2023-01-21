@@ -1,6 +1,6 @@
 {% load static %}
 
-<!--Loader-->
+{% comment %} <!--Loader-->
 <div class="loader">
   <div class="spinner centered">
     <div class="spinner-container container1">
@@ -17,7 +17,7 @@
     </div>
   </div>
 </div>
-<!--Loader ends-->
+<!--Loader ends--> {% endcomment %}
 
 <!-- header -->
 <header class="site-header">
@@ -103,19 +103,19 @@
         </ul>
       </div>
 
-      <!--side menu open button-->
+      {% comment %} <!--side menu open button-->
       <a
         href="javascript:void(0)"
         class="d-none d-lg-inline-block sidemenu_btn"
         id="sidemenu_toggle"
       >
         <span></span> <span></span> <span></span>
-      </a>
+      </a> {% endcomment %}
     </div>
   </nav>
 
   <!-- side menu -->
-  <div class="side-menu">
+  {% comment %} <div class="side-menu">
     <div class="inner-wrapper">
       <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
       <a class="navbar-brand" href="/">
@@ -139,7 +139,7 @@
             <a class="nav-link pagescroll" href="{% url 'products:index' %}">Packages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}>FAQs</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">FAQs</a>
           </li>
           <li class="nav-item">
             <a class="nav-link pagescroll" href="{% url 'products:index' %}">Contact</a>
@@ -173,7 +173,7 @@
         <p class="darkcolor">&copy; 2023 Subscriptions House.</p>
       </div>
     </div>
-  </div>
+  </div> {% endcomment %}
   <a id="close_side_menu" href="javascript:void(0);"></a>
 </header>
 <!-- header -->

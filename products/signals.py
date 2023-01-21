@@ -23,15 +23,9 @@ def payment_notification(sender, **kwargs):
             order_item.paid = True
             order_item.save()
             if order_item.product.title.title() != "Get Hired":
-                message = f"""Hi {user.name}. You have successfully subscribed to 
-                          {order_item.product.title} till {order_item.valid_till}.\n
-                          Your Coupon is being generated. Our customer care agent will
-                          contact you in 1 hour with your coupon."""
+                message = f"""Hi {user.name}. You have successfully subscribed to {order_item.product.title} till {order_item.valid_till}.\nYour Coupon is being generated. Our customer care agent will contact you in 1 hour with your coupon."""
             else:
-                message = f"""Hi {user.name}. You have successfully subscribed to 
-                          {order_item.product.title} till {order_item.valid_till}.\n
-                          Our customer care agent will contact you in 1 hour for 
-                          further discussion."""
+                message = f"""Hi {user.name}. You have successfully subscribed to {order_item.product.title} till {order_item.valid_till}.\nOur customer care agent will contact you in 1 hour for further discussion."""
 
             send_mail(
                 subject,
