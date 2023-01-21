@@ -15,4 +15,7 @@ class ProductAdmin(admin.ModelAdmin):
 @admin.register(OrderItem)
 class OrderItemAdmin(admin.ModelAdmin):
     list_display = ["product", "created_on", "paid"]
-    readonly_fields = ["paid"]
+    readonly_fields = [
+        "paid",
+        "created_on",
+    ]

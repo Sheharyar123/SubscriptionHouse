@@ -1,6 +1,8 @@
 from ckeditor.fields import RichTextField
+from datetime import timedelta
 from django.contrib.auth import get_user_model
 from django.db import models
+from django.utils import timezone
 import uuid
 
 from django.urls import reverse
@@ -41,7 +43,15 @@ class OrderItem(models.Model):
         Product, on_delete=models.CASCADE, related_name="order_items"
     )
     paid = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateField(default=timezone.now)
 
     def __str__(self):
-        return f"{self.user.name} bought {self.product.title}"
+        return f"{self.product.title}"
+
+    @property
+    def valid_till(self):
+        if self.product.title.title() == "Linkedin Sales Navigator Plan Coupons":
+            valid_date = self.created_on + timedelta(days=180)
+        else:
+            valid_date = self.created_on + timedelta(days=30)
+        return valid_date
