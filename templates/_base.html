@@ -20,6 +20,14 @@
 
 <body data-spy="scroll" data-target=".navbar-nav" data-offset="90">
     {% include '_navbar.html' %}
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
     {% block content %}{% endblock content %}
+    {% include '_footer.html' %}
     {% include '_scripts.html' %}
 </body>

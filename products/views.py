@@ -1,18 +1,41 @@
 from paypal.standard.forms import PayPalPaymentsForm
-from django.shortcuts import get_object_or_404
+from django.contrib import messages
+from django.core.mail import send_mail
+from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
-from django.views.generic import ListView, DetailView
+from django.views.generic import View, DetailView
 from django.conf import settings
 from .models import Product, OrderItem
+from .forms import ContactForm
 
 
-class ProductListView(ListView):
-    model = Product
-    template_name = "products/index.html"
-    context_object_name = "product_list"
+class ProductListView(View):
+    def get(self, request, *args, **kwargs):
+        product_list = Product.objects.filter(active=True)
+        context = {"product_list": product_list, "form": ContactForm}
+        return render(request, "products/index.html", context)
 
-    def get_queryset(self):
-        return Product.objects.filter(active=True)
+    def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            print(form)
+            subject = form.cleaned_data["subject"]
+            name = form.cleaned_data["name"]
+            email_from = form.cleaned_data["email"]
+            phone_no = form.cleaned_data["phone_no"]
+            message = f'{form.cleaned_data["comment"]}. Sent by {name} and Phone No is {phone_no}'
+            receipient_list = [
+                settings.EMAIL_HOST_USER,
+            ]
+            send_mail(
+                subject,
+                message,
+                email_from,
+                receipient_list,
+                fail_silently=False,
+            )
+            messages.success(request, "Your message was sent successfully")
+            return redirect("products:index")
 
 
 class ProductDetailView(DetailView):

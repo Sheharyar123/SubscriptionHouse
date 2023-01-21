@@ -48,25 +48,25 @@
       <div class="collapse navbar-collapse" id="wenav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#home">Home</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#aboutus">Services</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#gallery">About</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#reviews">Testimonials</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#pricing">Packages</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Packages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#faq">FAQs</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#contactus">contact</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">contact</a>
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">
@@ -127,22 +127,22 @@
             <a class="nav-link pagescroll" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#aboutus">Services</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#gallery">About</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#reviews">Testimonials</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#pricing">Packages</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Packages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#faq">FAQs</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}>FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="#contactus">Contact</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Contact</a>
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">

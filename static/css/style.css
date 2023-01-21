@@ -2153,7 +2153,7 @@ ul.bullet-list li::before {
 /* ----- Pricings ----- */
 .pricing_item {
   position: relative;
-  height: 550px;
+  height: 580px;
   padding: 2.5rem 1rem;
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
@@ -2162,6 +2162,7 @@ ul.bullet-list li::before {
   transition: all 0.5s ease;
   -webkit-border-radius: 10px;
   border-radius: 10px;
+  margin-bottom: 50px;
 }
 .pricing_item .pricing_price {
   padding: 15px 0 14px 0;
@@ -3509,6 +3510,7 @@ p.logomap {
 /* --------------- FOOTER ---------------*/
 footer {
   background: #384141;
+  width: 100%;
 }
 .footer_panel .divider-left {
   background: #fff;
@@ -3910,28 +3912,58 @@ footer .footer_panel p.address > i,
   }
 }
 
-
-.paypal-btn {
-  background-color: #d4ab4a;
-  border-radius: 5px;
-  padding: 5px 20px;
-  display: inline-block;
-  width: 100%;
-  margin-top: 10px;
-}
-
 .form-margin {
   margin-top: 180px;
   margin-bottom: 50px;
 }
 
 .form-title {
-  margin-bottom: 20px;
-  font-size: 30px;
+  font-size: 40px;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .auth-form-link:hover {
-  color: #007bff
+  color: #0062cc;
 }
 
+.footer-padding {
+  padding-top: 50px;
+}
+
+/* .pricing_item_detail {
+  position: relative;
+  height: 750px;
+  padding: 2.5rem 1rem;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.12);
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+
+.pricing_item_detail .pricing_price {
+  padding: 15px 0 14px 0;
+  border-top: 1px solid rgba(139, 144, 157, 0.18);
+  border-bottom: 1px solid rgba(139, 144, 157, 0.18);
+}
+.pricing_item_detail:hover .pricing_price {
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+.pricing_item_detail .pricing_currency {
+  font-size: 3rem;
+  font-weight: 300;
+}
+.pricing_list {
+  font-size: 14px;
+  padding: 25px 0;
+}
+.pricing_list li {
+  margin: 14px 0;
+  color: #a5a5a5;
+  font-size: 1rem;
+} */
