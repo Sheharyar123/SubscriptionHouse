@@ -1,89 +1,45 @@
 {% extends '_base.html' %}
+{% load static %}
 
 {% block title %}{{ product.title }}{% endblock title %}
 
 {% block content %}
 
-<div class="container">
+  <div class="container">
     <div class="row h-100 justify-content-center align-items-center">
       <div class="col-10 col-md-8 col-lg-6 form-margin">
             <div
-            class="pricing_item text-center top40 wow fadeIn"
-            data-wow-deeay="400ms"
-            >
-                <h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
-                <p class="bottom30">{{ product.title|title }}</p>
-                <div class="pricing_price darkcolor">
-                    <span class="pricing_currency">
-                        <b>${{ product.price }}</b></span>/{% if product.title == "Business Plan Coupons" %}6month{% else %}month{% endif %}
-                    
-                </div>
-                <p>{{ product.description|safe|linebreaks }}</p>
-                <!-- Set up a container element for the button -->
-                {% comment %} <div class="paypal-btn"></div> {% endcomment %}
-                {{ form.render }}
-            </div>
+              class="pricing_item_detail text-center top40 wow fadeIn"
+              data-wow-deeay="400ms"
+              >
+                  <h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
+                  <p class="bottom30">{{ product.title|title }}</p>
+                  <div class="pricing_price darkcolor">
+                      <span class="pricing_currency">
+                          <b>${{ product.price }}</b></span>/{% if product.title|title == "Linkedin Sales Navigator Plan Coupons" %}6month{% else %}month{% endif %}
+                      
+                  </div>
+                  <p>{{ product.description|safe|linebreaks }}</p>
+                  <form action="{{ action }}" method="post">
+                    <input type="hidden" name="cmd" value="_xclick" id="id_cmd">
+                    <input type="hidden" name="charset" value="utf-8" id="id_charset">
+                    <input type="hidden" name="currency_code" value="USD" id="id_currency_code">
+                    <input type="hidden" name="no_shipping" value="1" id="id_no_shipping">
+                    <input type="hidden" name="business" value="{{ paypal_dict.business }}" id="id_business">
+                    <input type="hidden" name="amount" value="{{ paypal_dict.amount }}" id="id_amount">
+                    <input type="hidden" name="item_name" value="{{ paypal_dict.item_name }}" id="id_item_name">
+                    <input type="hidden" name="invoice" value="{{ paypal_dict.invoice }}" id="id_invoice">
+                    <input type="hidden" name="notify_url" value="{{ paypal_dict.notify_url }}" id="id_notify_url">
+                    <input type="hidden" name="cancel_return" value="{{ paypal_dict.cancel_return }}" id="id_cancel_return">
+                    <input type="hidden" name="return" value="{{ paypal_dict.return }}" id="id_return">
+                    <div class="paypal">
+                      <input type="image" src="{% static 'images/paypal-logo.png' %}" name="submit" class="paypal-logo">
+                    </div>
+                  </form>
+                  {% comment %} {{ form.render }} {% endcomment %}
+          </div>
         </div>
-    </div>
-    
-
-    {% comment %} <!-- Include the PayPal JavaScript SDK -->
-    <script src="https://www.paypal.com/sdk/js?client-id=AZo2kjfbamodyckdiPN19gHZWCEcaOlfw5toyE22DzRGhRz4OUdOdQwyktHSiRVPKBTAgv43N8RKEdqY&currency=USD"></script>
-
-    <script>
-        function getCookie(name) {
-          var cookieValue = null;
-          if (document.cookie && document.cookie !== '') {
-            var cookies = document.cookie.split(';');
-            for (var i = 0; i < cookies.length; i++) {
-              var cookie = cookies[i].trim();
-              if (cookie.substring(0, name.length + 1) === (name + '=')) {
-                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-                break;
-              }
-            }
-          }
-          return cookieValue;
-        }
-        var csrftoken = getCookie('csrftoken');
-        var productID = '{{ product.id }}'
-      
-        function initPayPalButton() {
-          paypal.Buttons({
-            style: {
-              shape: 'rect',
-              color: 'gold',
-              layout: 'vertical',
-              label: 'paypal',
-      
-            },
-          createOrder: function (data, actions) {
-              return actions.order.create({
-                purchase_units: [{
-                  "amount": {
-                    "value": '{{ product.price }}'
-                  }
-                }]
-              });
-            },
-          onApprove: function (data) {
-              var url = "{% url 'payments:payment_complete' %}"
-              return fetch(url, {
-                method: 'POST',
-                headers: {
-                  'content-type': 'application/json',
-                  'X-CSRFToken': csrftoken,
-                },
-                body: JSON.stringify({
-                  productID: '{{ productID }}',
-                })
-              }).then(function () {
-                location.href = "{% url 'payments:payment_completed' %}";
-              })
-            },
-          }).render('.paypal-btn');
-        }
-        initPayPalButton();  
-    </script> {% endcomment %}
+      </div>
+  </div>
 
 {% endblock content %}

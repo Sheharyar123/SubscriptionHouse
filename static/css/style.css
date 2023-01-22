@@ -2151,7 +2151,7 @@ ul.bullet-list li::before {
 /* ----- Testimonials ends ----- */
 
 /* ----- Pricings ----- */
-.pricing_item {
+.pricing_item, .pricing_item_detail {
   position: relative;
   height: 580px;
   padding: 2.5rem 1rem;
@@ -2169,11 +2169,17 @@ ul.bullet-list li::before {
   border-top: 1px solid rgba(139, 144, 157, 0.18);
   border-bottom: 1px solid rgba(139, 144, 157, 0.18);
 }
+
 .pricing_item:hover .pricing_price {
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
 }
 .pricing_item .pricing_currency {
+  font-size: 3rem;
+  font-weight: 300;
+}
+
+.pricing_item_detail .pricing_currency {
   font-size: 3rem;
   font-weight: 300;
 }
@@ -3887,29 +3893,31 @@ footer .footer_panel p.address > i,
   text-align: center;
 }
 
-@media (max-width: 1400px) {
+@media (max-width: 1400px){
   .split-box .padding {
     padding: 5.5rem 0;
-  }
+  } 
 }
-@media (max-width: 1266px) {
+
+@media (max-width: 1266px){
   .split-box .padding {
     padding: 4rem 0;
-  }
+  } 
 }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px){
   .split-box .padding {
     padding: 3rem 0;
   }
 }
-@media (max-width: 992px) {
-  .split-box {
-    padding-left: 15px;
-    padding-right: 15px;
+@media (max-width: 992px){
+  .split-box{
+     padding-left: 15px;
+     padding-right: 15px;
   }
   .half-section .img-container {
-    margin-bottom: 25px;
+     margin-bottom: 25px;
   }
+  
 }
 
 .form-margin,
@@ -3931,4 +3939,26 @@ footer .footer_panel p.address > i,
 
 .footer-padding {
   padding-top: 50px;
+}
+
+
+.paypal {
+  background-color: #7f5900;
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  margin: 0 auto;
+  padding: 10px 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paypal-logo {
+  width: 100px;
+  height: 30px;
+}
+
+.paypal:hover {
+  background-color: #ad7900;
 }

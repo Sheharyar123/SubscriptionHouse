@@ -20,6 +20,20 @@
 
 <body data-spy="scroll" data-target=".navbar-nav" data-offset="90">
     {% include '_navbar.html' %}
+    {% if messages %}
+        {% for message in messages %} 
+            <div
+                {% if message.tags == "error" %} 
+                class="alert alert-danger alert-dismissible"
+                {% elif message.tags %} 
+                class="alert alert-{{ message.tags }} alert-dismissible"
+                {% endif %}
+                role="alert" id="box">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endif %}
     {% block content %}{% endblock content %}
+    {% include '_footer.html' %}
     {% include '_scripts.html' %}
 </body>

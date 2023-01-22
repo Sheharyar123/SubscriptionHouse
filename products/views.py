@@ -23,7 +23,7 @@ class ProductListView(View):
             name = form.cleaned_data["name"]
             email_from = form.cleaned_data["email"]
             phone_no = form.cleaned_data["phone_no"]
-            message = f'{form.cleaned_data["comment"]}\n\n. Sent by {name}.\nPhone No is {phone_no}'
+            message = f'{form.cleaned_data["comment"]}.\n\nSent by {name}.\nPhone No is {phone_no}'
             receipient_list = [
                 settings.EMAIL_HOST_USER,
             ]
@@ -60,9 +60,14 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
             "invoice": str(order_item.id),
             "currency_code": "USD",
             "notify_url": f"http://{host}{reverse('paypal-ipn')}",
-            "return_url": f"http://{host}{reverse('payments:payment_completed')}",
+            "return": f"http://{host}{reverse('payments:payment_completed')}",
             "cancel_return": f"http://{host}{reverse('payments:payment_cancelled')}",
         }
         form = PayPalPaymentsForm(initial=paypal_dict)
+        context["paypal_dict"] = paypal_dict
         context["form"] = form
+        if not settings.PAYPAL_TEST:
+            context["action"] = "https://www.paypal.com/cgi-bin/webscr"
+        else:
+            context["action"] = "https://www.sandbox.paypal.com/cgi-bin/webscr"
         return context

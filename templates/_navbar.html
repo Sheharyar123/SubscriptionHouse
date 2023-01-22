@@ -48,25 +48,25 @@
       <div class="collapse navbar-collapse" id="wenav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'products:index' %}#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Services</a>
+            <a class="nav-link" href="{% url 'products:index' %}#pricing">Packages</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">About</a>
+            <a class="nav-link" href="{% url 'products:index' %}#reviews">Testimonials</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Testimonials</a>
+            <a class="nav-link" href="{% url 'products:index' %}#aboutus">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Packages</a>
+            <a class="nav-link" href="{% url 'products:index' %}#gallery">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">FAQs</a>
+            <a class="nav-link" href="{% url 'products:index' %}#faq">FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">contact</a>
+            <a class="nav-link" href="{% url 'products:index' %}#contactus">contact</a>
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">

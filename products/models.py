@@ -28,6 +28,11 @@ class Product(models.Model):
     title = models.CharField(max_length=50)
     description = RichTextField()
     active = models.BooleanField(default=True)
+    added_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-updated_on", "-added_on"]
 
     def __str__(self):
         return f"{self.plan_type} - {self.title}"
