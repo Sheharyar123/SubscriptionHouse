@@ -4,42 +4,47 @@
 {% block title %}{{ product.title }}{% endblock title %}
 
 {% block content %}
-
-  <div class="container">
-    <div class="row h-100 justify-content-center align-items-center">
-      <div class="col-10 col-md-8 col-lg-6 form-margin">
-            <div
-              class="pricing_item_detail text-center top40 wow fadeIn"
-              data-wow-deeay="400ms"
-              >
-                  <h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
-                  <p class="bottom30">{{ product.title|title }}</p>
-                  <div class="pricing_price darkcolor">
-                      <span class="pricing_currency">
-                          <b>${{ product.price }}</b></span>/{% if product.title|title == "Linkedin Sales Navigator Plan Coupons" %}6month{% else %}month{% endif %}
-                      
-                  </div>
-                  <p>{{ product.description|safe|linebreaks }}</p>
-                  <form action="{{ action }}" method="post">
-                    <input type="hidden" name="cmd" value="_xclick" id="id_cmd">
-                    <input type="hidden" name="charset" value="utf-8" id="id_charset">
-                    <input type="hidden" name="currency_code" value="USD" id="id_currency_code">
-                    <input type="hidden" name="no_shipping" value="1" id="id_no_shipping">
-                    <input type="hidden" name="business" value="{{ paypal_dict.business }}" id="id_business">
-                    <input type="hidden" name="amount" value="{{ paypal_dict.amount }}" id="id_amount">
-                    <input type="hidden" name="item_name" value="{{ paypal_dict.item_name }}" id="id_item_name">
-                    <input type="hidden" name="invoice" value="{{ paypal_dict.invoice }}" id="id_invoice">
-                    <input type="hidden" name="notify_url" value="{{ paypal_dict.notify_url }}" id="id_notify_url">
-                    <input type="hidden" name="cancel_return" value="{{ paypal_dict.cancel_return }}" id="id_cancel_return">
-                    <input type="hidden" name="return" value="{{ paypal_dict.return }}" id="id_return">
-                    <div class="paypal">
-                      <input type="image" src="{% static 'images/paypal-logo.png' %}" name="submit" class="paypal-logo">
+  <div class="product-detail">
+    <div class="container">
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6 form-margin">
+              <div
+                class="pricing_item_detail text-center top40 wow fadeIn"
+                data-wow-deeay="400ms"
+                >
+                    <h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
+                    <p class="bottom30">{{ product.title|title }}</p>
+                    <div class="pricing_price darkcolor">
+                        <span class="pricing_currency">
+                            <b>${{ product.price }}</b></span>/{% if product.title|title == "Linkedin Business Plan Coupons" %}6month{% else %}month{% endif %}
+                        
                     </div>
-                  </form>
-                  {% comment %} {{ form.render }} {% endcomment %}
+                    <p>{{ product.description|safe|linebreaks }}</p>
+                    <form action="{{ action }}" method="post">
+                      <input type="hidden" name="cmd" value="_xclick" id="id_cmd">
+                      <input type="hidden" name="charset" value="utf-8" id="id_charset">
+                      <input type="hidden" name="currency_code" value="USD" id="id_currency_code">
+                      <input type="hidden" name="no_shipping" value="1" id="id_no_shipping">
+                      <input type="hidden" name="business" value="{{ paypal_dict.business }}" id="id_business">
+                      <input type="hidden" name="amount" value="{{ paypal_dict.amount }}" id="id_amount">
+                      <input type="hidden" name="item_name" value="{{ paypal_dict.item_name }}" id="id_item_name">
+                      <input type="hidden" name="invoice" value="{{ paypal_dict.invoice }}" id="id_invoice">
+                      <input type="hidden" name="notify_url" value="{{ paypal_dict.notify_url }}" id="id_notify_url">
+                      <input type="hidden" name="cancel_return" value="{{ paypal_dict.cancel_return }}" id="id_cancel_return">
+                      <input type="hidden" name="return" value="{{ paypal_dict.return }}" id="id_return">
+                      <div class="paypal">
+                        <input type="image" src="{% static 'images/paypal-logo.png' %}" name="submit" class="paypal-logo">
+                      </div>
+                    </form>
+                    {% comment %} {{ form.render }} {% endcomment %}
+                    <form action="{% url 'payments:process_payment' %}" method="POST">
+                      {% csrf_token %}
+                      <button type="submit" class="card-btn">Pay with Card</button>
+                    </form>
+            </div>
           </div>
         </div>
-      </div>
+    </div>
   </div>
 
 {% endblock content %}

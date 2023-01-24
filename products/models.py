@@ -24,7 +24,7 @@ class Product(models.Model):
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     background_type = models.CharField(choices=BACKGROUND_TYPE, max_length=30)
     plan_type = models.CharField(choices=PLAN_TYPE, max_length=30)
-    price = models.FloatField()
+    price = models.DecimalField(max_digits=8, decimal_places=0)
     title = models.CharField(max_length=50)
     description = RichTextField()
     active = models.BooleanField(default=True)
@@ -53,9 +53,13 @@ class OrderItem(models.Model):
     )
     paid = models.BooleanField(default=False)
     created_on = models.DateField(default=timezone.now)
+    updated_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.product.title}"
+
+    class Meta:
+        ordering = ["-updated_on", "-created_on"]
 
     @property
     def valid_till(self):

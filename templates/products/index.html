@@ -106,7 +106,7 @@
 							<div class="pricing_price darkcolor">
 								<span class="pricing_currency">
 									<b>${{ product.price }}</b></span>/
-									{% if product.title|title == "Linkedin Sales Navigator Plan Coupons" %}6month{% else %}month{% endif %}
+									{% if product.title|title == "Linkedin Business Plan Coupons" %}6month{% else %}month{% endif %}
 							</div>
 							<p>{{ product.description|safe|linebreaks }}</p>
 							<a class="btn_common btn_{{ product.background_type }}" href="{{ product.get_absolute_url }}"
@@ -123,460 +123,448 @@
 	<!--Customers Review-->
 	<section id="reviews" class="padding bg_light">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center wow fadeInDown">
-				<h2 class="heading bottom45 darkcolor">
-				<span>Client</span> Testimonials <span class="divider-center"></span>
-				</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-md-12 col-sm-12">
-				<div
-				id="testimonial-slider"
-				class="owl-carousel"
-				data-bs-interval="10000"
-				>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							I recently purchased a premium Coupons service for Linkedin
-							from this website, and I'm so glad I did. I am thankful
-						</p>
+		   <div class="row">
+			  <div class="col-md-12 text-center wow fadeInDown">
+				 <h2 class="heading bottom45 darkcolor"><span>Client</span> Testimonials <span
+					   class="divider-center"></span></h2>
+			  </div>
+		   </div>
+		   <div class="row">
+			  <div class="col-md-12 col-sm-12">
+				 <div id="testimonial-slider" class="owl-carousel" data-bs-interval="10000">
+  
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">I recently purchased a premium Coupons service for Linkedin from this
+								website, and I'm so glad I did. I am thankful</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-1.jpg' %}"></div>
+						  <h4 class="darkcolor">John Smith</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-1.jpg' %}" />
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">I've been using this website for a few months now and can't speak highly
+								enough of it. Great prices, great service - and it helps me land a job quickly</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-2.jpg' %}"></div>
+						  <h4 class="darkcolor">Steve</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-					<h4 class="darkcolor">John Smith</h4>
-					<small class="defaultcolor"></small>
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">This website is a great way to get premium Coupons Services at a low
+								cost. I've been able to find a job with their services</p>
+  
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-3.jpg' %}"></div>
+						  <h4 class="darkcolor">Amir Ali</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							I've been using this website for a few months now and can't
-							speak highly enough of it. Great prices, great service - and
-							it helps me land a job quickly
-						</p>
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">Fantastic website! I've been able to get a great job thanks to
+								subscription house. I highly recommend this site. I am happy with the services</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-4.jpg' %}"></div>
+						  <h4 class="darkcolor">Jannat Mirza</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-2.jpg' %}" />
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">Very pleased with this website. Their Coupons services are invaluable and
+								they offer great rates. Would definitely recommend</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-5.jpg' %}"></div>
+						  <h4 class="darkcolor">Sidra</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-					<h4 class="darkcolor">Jane Doe</h4>
-					<small class="defaultcolor"></small>
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">This website is a great way to get premium Coupons at a low cost. Highly
+								recommend if you're looking to land a job</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-6.jpg' %}"></div>
+						  <h4 class="darkcolor">Ryan Miller</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							This website is a great way to get premium Coupons Services at
-							a low cost. I've been able to find a job with their Services
-						</p>
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">Great website for job seekers! The LinkedIn Coupons services are great
+								and I've been very pleased with the results. Highly Recommend</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-7.jpg' %}"></div>
+						  <h4 class="darkcolor">Ali Ahmad</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-3.jpg' %}" />
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">I'm so impressed with the services. They offer a great range of Coupons
+								services at a low rate, which has helped me land a job. It took only 1 week</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-8.jpg' %}"></div>
+						  <h4 class="darkcolor">Waqas Gondal</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-					<h4 class="darkcolor">Amir Ali</h4>
-					<small class="defaultcolor"></small>
+					<div class="item">
+					   <div class="testimonial-wrapp">
+						  <span class="quoted"><i class="fa fa-quote-right"></i></span>
+						  <div class="testimonial-text">
+							 <p class="bottom40">This website offers a great range of premium Coupons services at a low
+								rate. I've been able to find a job and I'm very pleased</p>
+						  </div>
+						  <div class="testimonial-photo"><img alt="" src="{% static 'images/testimonial-9.jpg' %}"></div>
+						  <h4 class="darkcolor">Haniya Raza</h4>
+						  <small class="defaultcolor"></small>
+					   </div>
 					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							Fantastic website! I've been able to get a great job thanks to
-							subscription house. I Highly recommend this site. I am Happy
-							with Services
-						</p>
-					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-4.jpg' %}" />
-					</div>
-					<h4 class="darkcolor">Jannat Mirza</h4>
-					<small class="defaultcolor"></small>
-					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							Very pleased with this website. Their Coupons services are
-							invaluable and they offer great rates. Would definitely
-							recommend
-						</p>
-					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-5.jpg' %}" />
-					</div>
-					<h4 class="darkcolor">Sidra</h4>
-					<small class="defaultcolor"></small>
-					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							This website is a great way to get premium Coupons at a low
-							cost. Highly recommend if you're looking to land a job
-						</p>
-					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-6.jpg' %}" />
-					</div>
-					<h4 class="darkcolor">Ryan Miller</h4>
-					<small class="defaultcolor"></small>
-					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							Great website for job seekers! The LinkedIn Coupons services
-							are great and I've been very pleased with the results. Highly
-							Recommend
-						</p>
-					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-7.jpg' %}" />
-					</div>
-					<h4 class="darkcolor">Ali Ahmad</h4>
-					<small class="defaultcolor"></small>
-					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							I'm so impressed with service. They offer a great range of
-							Coupons services at a low rate, which has helped me land a
-							job, it took only 1 week
-						</p>
-					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-8.jpg' %}" />
-					</div>
-					<h4 class="darkcolor">Waqas Gondal</h4>
-					<small class="defaultcolor"></small>
-					</div>
-				</div>
-				<div class="item">
-					<div class="testimonial-wrapp">
-					<span class="quoted"><i class="fa fa-quote-right"></i></span>
-					<div class="testimonial-text">
-						<p class="bottom40">
-							This website offers a great range of premium Coupons services
-							at a low rate. I've been able to find and I'm very pleased
-						</p>
-					</div>
-					<div class="testimonial-photo">
-						<img alt="" src="{% static 'images/testimonial-9.jpg' %}" />
-					</div>
-					<h4 class="darkcolor">Haniya Raza</h4>
-					<small class="defaultcolor"></small>
-					</div>
-				</div>
-				</div>
-				</div>
-			</div>
+				 </div>
+			  </div>
+		   </div>
 		</div>
 	</section>
-	<!--Customers Review-->
+	 <!--Customers Review-->
 
 	<!--About US-->
 	<section id="aboutus" class="padding">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center wow fadeIn" data-wow-delay="300ms">
-				<h2 class="heading darkcolor">
-				<span>Our</span> Services <span class="divider-center"></span>
-				</h2>
-				</div>
-			</div>
-			<div class="icon_wraper row">
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
-				<div class="icon_box text-center margin_tophalf">
-				<i class="fa fa-bar-chart"></i>
-				<h4 class="text-capitalize darkcolor bottom20 margin10">
-					Sales Navigater Coupons
-				</h4>
-				<p class="no_bottom">
-					Sales Navigator is the premier sales-focused tool from LinkedIn that
-					helps sales professionals maximize their efficiency and performance.
-					With its filtering capabilities.
-				</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
-				<div class="icon_box text-center margin_tophalf">
-				<i class="fa fa-server"></i>
-				<h4 class="text-capitalize darkcolor bottom20 margin10">
-					Business Plan Coupons
-				</h4>
-				<p class="no_bottom">
-					LinkedIn's business plan is designed to help professionals achieve
-					their career goals by connecting them with the right people,
-					resources, and opportunities.
-				</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="500ms">
-				<div class="icon_box text-center margin_tophalf">
-				<i class="fa fa-globe"></i>
-				<h4 class="text-capitalize darkcolor bottom20 margin10">
-					Recruiter Premium Coupons
-				</h4>
-				<p class="no_bottom">
-					With Recruiter Premium, you can search LinkedIn's massive network of
-					professionals, create custom job postings, source candidates, and
-					manage your hiring pipeline.
-				</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
-				<div class="icon_box text-center margin_tophalf">
-				<i class="fa fa-support"></i>
-				<h4 class="text-capitalize darkcolor bottom20 margin10">
-					Get Hired Basic
-				</h4>
-				<p class="no_bottom">
-					Are you looking for a new job? Get Hired with our help on LinkedIn!
-					Our team of experienced career advisors can help you by applying on
-					10 companies for job.
-				</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
-				<div class="icon_box text-center margin_tophalf">
-				<i class="fa fa-cubes"></i>
-				<h4 class="text-capitalize darkcolor bottom20 margin10">
-					Get Hired Popular
-				</h4>
-				<p class="no_bottom">
-					Our team can help you create a winning profile, We apply for you on
-					40 companies plus Resume/CV Editing. We help craft a compelling
-					summary that will help you stand out.
-				</p>
-				</div>
-				</div>
-				<div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="500ms">
-				<div class="icon_box text-center margin_tophalf">
-				<i class="fa fa-laptop"></i>
-				<h4 class="text-capitalize darkcolor bottom20 margin10">
-					Get Hired Enterprise
-				</h4>
-				<p class="no_bottom">
-					We help you build a powerful network and We apply for you to 60
-					companies with 80% success rate of interview.
-				</p>
-				</div>
-				</div>
-			</div>
+		   <div class="row">
+			  <div class="col-sm-12 text-center wow fadeIn" data-wow-delay="300ms">
+				 <h2 class="heading darkcolor"><span>Our</span> Services <span class="divider-center"></span></h2>
+			  </div>
+		   </div>
+		   <div class="icon_wraper row">
+			  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
+				 <div class="icon_box text-center margin_tophalf">
+					<i class="fa fa-bar-chart"></i>
+					<h4 class="text-capitalize darkcolor bottom20 margin10">LinkedIn Business Plan Coupon</h4>
+					<p class="no_bottom">LinkedIn's business plan is designed to help professionals achieve their career
+					   goals by connecting them with the right people, resources, and opportunities.</p>
+				 </div>
+			  </div>
+			  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
+				 <div class="icon_box text-center margin_tophalf">
+					<i class="fa fa-server"></i>
+					<h4 class="text-capitalize darkcolor bottom20 margin10">LinkedIn Sales Navigator Plan Coupons</h4>
+					<p class="no_bottom">Sales Navigator is the premier sales-focused tool from LinkedIn that helps sales
+					   professionals maximize their efficiency and performance with its filtering capabilities.</p>
+				 </div>
+			  </div>
+			  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="500ms">
+				 <div class="icon_box text-center margin_tophalf">
+					<i class="fa fa-globe"></i>
+					<h4 class="text-capitalize darkcolor bottom20 margin10">LinkedIn Recruiter Plan Coupon</h4>
+					<p class="no_bottom">With Recruiter Premium, you can search LinkedIn's massive network of
+					   professionals, create custom job postings, source candidates, and manage your hiring pipeline.</p>
+				 </div>
+			  </div>
+			  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="300ms">
+				 <div class="icon_box text-center margin_tophalf">
+					<i class="fa fa-support"></i>
+					<h4 class="text-capitalize darkcolor bottom20 margin10">Get Hired Basic</h4>
+					<p class="no_bottom">Are you looking for a new job? Get Hired with our help on LinkedIn! Our team of
+					   experienced career advisors can help you by applying on 10 companies for a job.</p>
+				 </div>
+			  </div>
+			  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
+				 <div class="icon_box text-center margin_tophalf">
+					<i class="fa fa-cubes"></i>
+					<h4 class="text-capitalize darkcolor bottom20 margin10">Get Hired Popular</h4>
+					<p class="no_bottom">Our team can help you create a winning profile. We apply for you on 40 companies
+					   plus Resume/CV Editing. We help craft a compelling summary that will help you stand out. </p>
+				 </div>
+			  </div>
+			  <div class="col-md-4 col-sm-6 wow fadeInUp" data-wow-delay="500ms">
+				 <div class="icon_box text-center margin_tophalf">
+					<i class="fa fa-laptop"></i>
+					<h4 class="text-capitalize darkcolor bottom20 margin10">Get Hired Enterprise</h4>
+					<p class="no_bottom">We help you build a powerful network and We to 60 companies for you, with
+					   80% success rate of an interview.</p>
+				 </div>
+			  </div>
+		   </div>
 		</div>
 	</section>
-	<!--ABout US-->
+	 <!--ABout US-->
 
 	<!--Paralax Background -->
 	<section id="parallax-bg" class="parallax-one parallaxie">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center wow bounceIn">
-				<p class="bottom10 whitecolor">Unleash Opportunities With Us</p>
-				<h1 class="bottom25 whitecolor font-light2">
-				Looking For Help in Getting a Job?
-				</h1>
-				<a
-				href="#contactus"
-				class="btn_common white_transparent"
-				>Contact Now</a
-				>
-				</div>
-			</div>
+		   <div class="row">
+			  <div class="col-md-12 text-center wow bounceIn">
+				 <p class="bottom10 whitecolor">Unleash Opportunities With Us</p>
+				 <h1 class="bottom25 whitecolor font-light2">Looking For Help in Getting a Job?</h1>
+				 <a href="#contactus" class="btn_common white_transparent">Contact Now</a>
+			  </div>
+		   </div>
 		</div>
 	</section>
-	<!--Paralax Backgroun ends -->
+	 <!--Paralax Backgroun ends -->
 
 	<!-- Gallery -->
 	<section id="gallery" class="padding">
 		<div class="container">
-			<div class="row">
-				<div class="col-sm-12 text-center">
-				<h2 class="heading heading_space darkcolor">
-				<span>About</span> Us<span class="divider-center"></span>
-				</h2>
-				<div id="project-filter" class="cbp-l-filters dark bottom30"></div>
-				</div>
-			</div>
-			<p id="aboutuspara">
-				Welcome to Subscription House, the premier provider of Coupons services
-				for LinkedIn and other premium services. We are dedicated to helping job
-				seekers land a job quickly and build their career. At Subscription House,
-				we understand the importance of having a strong presence on LinkedIn and
-				other social media platforms, in order to secure the perfect job. We
-				provide comprehensive services to help job seekers maximize their presence
-				on these platforms, giving them the best chances of success. Our services
-				are tailored to meet the individual needs of each job seeker. We offer a
-				variety of services, including job search assistance, resume and cover
-				letter writing, job application advice, interview preparation, and even
-				career guidance. We are proud to be the premier provider of services for
-				LinkedIn and other premium platforms Our team of experienced professionals
-				will guide you through every step of the process, maximizing your chances
-				of success. With our help, you can get the job you want and build your
-				career.
-			</p>
-			<br />
-			<p id="aboutuspara">
-				If you are looking for the best Coupons for LinkedIn and other premium
-				platforms, look no further than Subscription House. We are here to help
-				you find your dream job and launch a successful career.
-			</p>
+		   <div class="row">
+			  <div class="col-sm-12 text-center">
+				 <h2 class="heading heading_space darkcolor"><span>About</span> Us<span class="divider-center"></span>
+				 </h2>
+				 <div id="project-filter" class="cbp-l-filters dark bottom30">
+					<!-- <div data-filter="*" class="cbp-filter-item">
+					   <span>All images</span>
+					</div>
+					<div data-filter=".digital" class="cbp-filter-item">
+					   <span>Digital</span>
+					</div>
+					<div data-filter=".design" class="cbp-filter-item">
+					   <span>Design</span>
+					</div>
+					<div data-filter=".brand" class="cbp-filter-item">
+					   <span>Brand</span>
+					</div>
+					<div data-filter=".graphics" class="cbp-filter-item">
+					   <span>Graphics</span>
+					</div> -->
+				 </div>
+			  </div>
+		   </div>
+		   <p id="aboutuspara">
+			  Welcome to Subscription House, the premier provider of Coupons services for LinkedIn and other premium
+			  services. We are dedicated to helping job seekers land a job quickly and build their career.
+  
+			  At Subscription House, we understand the importance of having a strong presence on LinkedIn and other social
+			  media platforms, in order to secure the perfect job. We provide comprehensive services to help job seekers
+			  maximize their presence on these platforms, giving them the best chances of success.
+  
+			  Our services are tailored to meet the individual needs of each job seeker. We offer a variety of services,
+			  including job search assistance, resume and cover letter writing, job application advice, interview
+			  preparation, and even career guidance.
+  
+			  We are proud to be the premier provider of services for LinkedIn and other premium platforms Our team of
+			  experienced professionals will guide you through every step of the process, maximizing your chances of
+			  success. With our help, you can get the job you want and build your career.
+		   </p>
+		   <br>
+		   <p id="aboutuspara">
+			  If you are looking for the best Coupons for LinkedIn and other premium platforms, look no further than
+			  Subscription House. We are here to help you find your dream job and launch a successful career.
+		   </p>
+		   <!-- <div id="projects" class="cbp">
+			  <div class="cbp-item digital">
+				 <img src="images/gallery1.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery1.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item digital design">
+				 <img src="images/gallery2.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery2.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item digital">
+				 <img src="images/gallery3.jpg" alt="">
+				 <div class="overlay center-block">
+					<div class="centered text-center">
+					   <a href="images/gallery3.jpg" class="opens" data-fancybox="gallery"> <i
+							 class="fa fa-search-plus"></i></a>
+					</div>
+				 </div>
+			  </div>
+			  <div class="cbp-item graphics design">
+				 <img src="images/gallery4.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery4.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item brand graphics">
+				 <img src="images/gallery6.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery6.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item graphics">
+				 <img src="images/gallery8.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery8.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item brand">
+				 <img src="images/gallery5.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery5.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item brand">
+				 <img src="images/gallery7.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery7.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item digital brand">
+				 <img src="images/gallery10.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery10.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item design">
+				 <img src="images/gallery9.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery9.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item graphics">
+				 <img src="images/gallery13.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery13.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item brand digital">
+				 <img src="images/gallery12.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery12.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+			  <div class="cbp-item design graphics">
+				 <img src="images/gallery11.jpg" alt="">
+				 <div class="overlay center-block text-center">
+					<a href="images/gallery11.jpg" class="opens" data-fancybox="gallery"> <i
+						  class="fa fa-search-plus"></i></a>
+				 </div>
+			  </div>
+		   </div> -->
 		</div>
 	</section>
-	<!-- Gallery -->
+	 <!-- Gallery -->
 
 	<!--Fun Facts-->
 	<section id="bg-counters" class="parallaxie padding">
 		<div class="container">
-			<h2 class="d-none">hidden</h2>
-			<div class="row number-counters">
-				<div
-				class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
-				data-wow-delay="300ms"
-				>
-				<i class="fa fa-cubes"></i>
-				<strong class="counter" data-to="735">0</strong>
-				<p class="counter">Active Subscribers</p>
-				</div>
-				<div
-				class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
-				data-wow-delay="400ms"
-				>
-				<i class="fa fa-trophy"></i>
-				<strong class="counter" data-to="5362">0</strong>
-				<p class="counter">Jobs Applied</p>
-				</div>
-				<div
-				class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
-				data-wow-delay="500ms"
-				>
-				<i class="fa fa-clock-o"></i>
-				<strong class="counter" data-to="4456">0</strong>
-				<p class="counter">Job Landed</p>
-				</div>
-				<div
-				class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp"
-				data-wow-delay="600ms"
-				>
-				<i class="fa fa-smile-o"></i>
-				<strong class="counter" data-to="1375">0</strong>
-				<p class="counter">Happy Clients</p>
-				</div>
-			</div>
+		   <h2 class="d-none">hidden</h2>
+		   <div class="row number-counters">
+			  <div class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp" data-wow-delay="300ms">
+				 <i class="fa fa-cubes"></i>
+				 <strong class="counter" data-to="735">0</strong>
+				 <p class="counter">Active Subscribers</p>
+			  </div>
+			  <div class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp" data-wow-delay="400ms">
+				 <i class="fa fa-trophy"></i>
+				 <strong class="counter" data-to="5362">0</strong>
+				 <p class="counter">Jobs Applied</p>
+			  </div>
+			  <div class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp" data-wow-delay="500ms">
+				 <i class="fa fa-clock-o"></i>
+				 <strong class="counter" data-to="4456">0</strong>
+				 <p class="counter">Job Landed</p>
+			  </div>
+			  <div class="col-md-3 col-sm-6 col-xs-6 counters-item text-center wow fadeInUp" data-wow-delay="600ms">
+				 <i class="fa fa-smile-o"></i>
+				 <strong class="counter" data-to="1375">0</strong>
+				 <p class="counter">Happy Clients</p>
+			  </div>
+		   </div>
 		</div>
 	</section>
-	<!--Fun Facts-->
+	 <!--Fun Facts-->
 
 
 	<!--FAQ-->
 	<section id="faq" class="padding centerfaq">
 		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-				<h2
-				class="heading heading_space darkcolor font-light2 wow fadeIn"
-				data-wow-delay="300ms"
-				>
-				<span>Frequently</span> Asked<span class="divider-left"></span>
-				</h2>
-				<div class="faq_content">
-				<ul class="items">
-					<li class="wow fadeIn" data-wow-delay="450ms">
-					<a href="javascript:void(0)"
-						>Are there any discounts available for the premium service?</a
-					>
-					<ul class="sub-items">
-						<li>
-							<p>
-							Unfortunately, at this time we do not have a discount policy
-							or refund policy. However, we are always looking for ways to
-							serve our customers better.
-							</p>
-						</li>
+		   <div class="row">
+			  <div class="col-md-12">
+				 <h2 class="heading heading_space darkcolor font-light2 wow fadeIn" data-wow-delay="300ms">
+					<span>Frequently</span> Asked<span class="divider-left"></span></h2>
+				 <div class="faq_content">
+					<ul class="items">
+					   <li class="wow fadeIn" data-wow-delay="450ms"><a href="javascript:void(0)">Are there any discounts
+							 available for the premium service?</a>
+						  <ul class="sub-items">
+							 <li>
+								<p>Unfortunately, at this time, we do not have a discount policy or refund policy.
+								   However, we are always looking for ways to serve our customers better.</p>
+							 </li>
+						  </ul>
+					   </li>
+					   <li class="wow fadeIn" data-wow-delay="500ms"><a href="javascript:void(0)">Is there a way to try
+							 the premium service before subscribing?</a>
+						  <ul class="sub-items">
+							 <li>
+								<p>Unfortunately, there is no way to try the premium service before subscribing. However,
+								   LinkedIn and other services offer free 1-month trials, which can give you an indication
+								   of the features offered by the premium service before you make a commitment to buy.</p>
+							 </li>
+						  </ul>
+					   </li>
+					   <li class="wow fadeIn" data-wow-delay="550ms"><a href="javascript:void(0)">Are LinkedIn Coupons
+							 worth buying?</a>
+						  <ul class="sub-items">
+							 <li>
+								<p>If you are looking to connect with a large network of professionals, find job
+								   opportunities, and showcase your expertise, then a LinkedIn Coupons could be worth it.
+								</p>
+							 </li>
+						  </ul>
+					   </li>
+					   <li class="wow fadeIn" data-wow-delay="550ms"><a href="javascript:void(0)">What are the different
+							 types of LinkedIn accounts?</a>
+						  <ul class="sub-items">
+							 <li>
+								<p>The three different types of LinkedIn accounts are, <b>Premium Account</b>, <b>Business
+									  Account</b>, and <b>Recruiter Account</b></p>
+							 </li>
+						  </ul>
+					   </li>
+					   <li class="wow fadeIn" data-wow-delay="550ms"><a href="javascript:void(0)">How Do I Pay for
+							 Coupons?</a>
+						  <ul class="sub-items">
+							 <li>
+								<p>At Subscription House, we make paying for your Coupons easy! Our website offers several
+								   payment options, so you can choose the one that is most convenient for you.
+  
+								   We accept all major credit and debit cards, including Visa, Mastercard, American
+								   Express, and Discover.</p>
+							 </li>
+						  </ul>
+					   </li>
 					</ul>
-					</li>
-					<li class="wow fadeIn" data-wow-delay="500ms">
-					<a href="javascript:void(0)"
-						>Is there a way to try the premium service before
-						subscribing?</a
-					>
-					<ul class="sub-items">
-						<li>
-							<p>
-							Unfortunately, there is no way to try the premium service
-							before subscribing. However, LinkedIn and other services
-							offer free 1-month trials, which can give you an indication
-							of the features offered by the premium service before you
-							make a commitment to buy.
-							</p>
-						</li>
-					</ul>
-					</li>
-					<li class="wow fadeIn" data-wow-delay="550ms">
-					<a href="javascript:void(0)"
-						>Is a LinkedIn Coupons worth buying?</a
-					>
-					<ul class="sub-items">
-						<li>
-							<p>
-							If you are looking to connect with a large network of
-							professionals, find job opportunities, and showcase your
-							expertise, then a LinkedIn Coupons could be worth it.
-							</p>
-						</li>
-					</ul>
-					</li>
-					<li class="wow fadeIn" data-wow-delay="550ms">
-					<a href="javascript:void(0)"
-						>What are the different types of LinkedIn accounts?</a
-					>
-					<ul class="sub-items">
-						<li>
-							<p>
-							The three different types of LinkedIn accounts are,
-							<b>Premium Account</b>, <b>Business Account</b>, and
-							<b>Recruiter Account</b>
-							</p>
-						</li>
-					</ul>
-					</li>
-					<li class="wow fadeIn" data-wow-delay="550ms">
-					<a href="javascript:void(0)">How Do I Pay for Coupons?</a>
-					<ul class="sub-items">
-						<li>
-							<p>
-							At Subscription House, we make paying for your Coupons easy!
-							Our website offers several payment options, so you can
-							choose the one that is most convenient for you. We accept
-							all major credit and debit cards, including Visa,
-							Mastercard, American Express, and Discover.
-							</p>
-						</li>
-					</ul>
-					</li>
-				</ul>
-				</div>
-				</div>
-			</div>
+				 </div>
+			  </div>
+		   </div>
 		</div>
 	</section>
 	<!--FAQ ends-->
