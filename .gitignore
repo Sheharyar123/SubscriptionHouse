@@ -104,6 +104,7 @@ venv/
 ENV/ 
 env.bak/ 
 venv.bak/ 
+.env.prod
 
 # mkdocs documentation 
 /site 
@@ -141,3 +142,6 @@ fixtures/
 
 # Ngrok
 ngrok.exe
+
+# Docker Compose
+docker-compose-prod.yml
