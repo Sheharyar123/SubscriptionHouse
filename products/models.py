@@ -64,7 +64,7 @@ class OrderItem(models.Model):
 
     @property
     def valid_till(self):
-        if self.product.title.title() == "Linkedin Sales Navigator Plan Coupons":
+        if self.product.is_featured:
             valid_date = self.created_on + timedelta(days=180)
         else:
             valid_date = self.created_on + timedelta(days=30)

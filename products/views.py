@@ -23,7 +23,7 @@ class ProductListView(View):
             name = form.cleaned_data["name"]
             email_from = form.cleaned_data["email"]
             phone_no = form.cleaned_data["phone_no"]
-            message = f'{form.cleaned_data["comment"]}.\n\nSent by {name}.\nPhone No is {phone_no}'
+            message = f'{form.cleaned_data["comment"]}.\n\nSent by {name}.\nPhone No is {phone_no}.\nEmail is {email_from}'
             receipient_list = [
                 settings.EMAIL_HOST_USER,
             ]

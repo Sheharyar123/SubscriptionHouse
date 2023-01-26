@@ -159,11 +159,6 @@ ACCOUNT_FORMS = {
 PAYPAL_RECEIVER_EMAIL = env.str("PAYPAL_RECEIVER_EMAIL")
 PAYPAL_TEST = env.bool("PAYPAL_TEST")
 
-# Stripe Settings
-# STRIPE_PUBLISHABLE_KEY = env.str("STRIPE_PUBLISHABLE_KEY")
-# STRIPE_SECRET_KEY = env.str("STRIPE_SECRET_KEY")
-# STRIPE_API_VERSION = env.str("STRIPE_API_VERSION")
-# STRIPE_WEBHOOK_SECRET = env.str("STRIPE_WEBHOOK_SECRET")
 # SMTP Settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -172,7 +167,7 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
-CSRF_TRUSTED_ORIGINS = ["https://579d-101-53-247-21.in.ngrok.io"]
+CSRF_TRUSTED_ORIGINS = ["https://ace6-101-53-247-21.in.ngrok.io"]
 
 # Security Settings
 # SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)

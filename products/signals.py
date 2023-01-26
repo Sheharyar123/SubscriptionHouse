@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
+from django.urls import reverse
 from .models import OrderItem
 from paypal.standard.ipn.signals import valid_ipn_received
 from django.dispatch import receiver
@@ -32,6 +33,19 @@ def payment_notification(sender, **kwargs):
                 message,
                 email_from,
                 recipient_list,
+                fail_silently=False,
+            )
+
+            # Email to owner
+            email_subject = "Email from Wasif Gondal"
+            email_message = f"{user.name} has bought the following product.\n{reverse(order_item.product.get_absolute_url)}.\n{user.name}'s email is {user.email} and phone no is {user.phone_no}."
+            email_sender = "phantomdjangouser@gmail.com"
+            email_to = [settings.EMAIL_HOST_USER,]
+            send_mail(
+                email_subject,
+                email_message,
+                email_sender,
+                email_to,
                 fail_silently=False,
             )
     else:
