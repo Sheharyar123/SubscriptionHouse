@@ -2669,7 +2669,6 @@ blockquote.blockquote::before {
 /* ----- Blog & News ends ----- */
 
 #text_rotator_parent {
-  background: url(../images/text-rotator.jpg) no-repeat;
   width: 100%;
   background-position: center center;
   -webkit-background-size: cover;
@@ -2746,26 +2745,20 @@ blockquote.blockquote::before {
 
 /* ----- Paralax bg  ----- */
 #parallax-bg {
-  background: url(../images/parallax2.jpg) no-repeat;
+  background: url(../images/parallax1.jpg) no-repeat;
   padding: 10% 0;
 }
 #parallax-bg.parallax-one {
   background: url(../images/parallax1.jpg) no-repeat;
 }
 .banner-fullscreen {
-  background: url(../images/banner-flat.jpg) no-repeat;
+  background: url(../images/transparent-bg.png) no-repeat;
 }
 #simple-banner {
   background: url(../images/counter.jpg) no-repeat;
 }
 #fading-banner {
-  background: url(../images/bg-single-3.jpg) no-repeat;
-}
-#fading-banner.fading-banner-one {
-  background: url(../images/fadding-banner-1.jpg) no-repeat;
-}
-.bg-crypto {
-  background: url(../images/bg-crypto.jpg) no-repeat;
+  background: url(../images/testimonial-3.jpg) no-repeat;
 }
 #parallax-bg,
 #parallax-bg.parallax-one,
@@ -2794,37 +2787,37 @@ blockquote.blockquote::before {
 
 /*Single Porfolio parallax*/
 .item-one {
-  background: url(../images/bg-single-1.jpg) no-repeat;
+  background: url(../images/testimonial-1.jpg) no-repeat;
 }
 .item-two {
-  background: url(../images/bg-single-2.jpg) no-repeat;
+  background: url(../images/testimonial-2.jpg) no-repeat;
 }
 .item-three {
-  background: url(../images/bg-single-3.jpg) no-repeat;
+  background: url(../images/testimonial-3.jpg) no-repeat;
 }
 .item-four {
-  background: url(../images/bg-single-4.jpg) no-repeat;
+  background: url(../images/testimonial-4.jpg) no-repeat;
 }
 .item-five {
-  background: url(../images/bg-single-5.jpg) no-repeat;
+  background: url(../images/testimonial-5.jpg) no-repeat;
 }
 .item-six {
-  background: url(../images/bg-single-6.jpg) no-repeat;
+  background: url(../images/testimonial-6.jpg) no-repeat;
 }
 .item-seven {
-  background: url(../images/bg-single-7.jpg) no-repeat;
+  background: url(../images/testimonial-7.jpg) no-repeat;
 }
 .item-eight {
-  background: url(../images/bg-single-8.jpg) no-repeat;
+  background: url(../images/testimonial-8.jpg) no-repeat;
 }
 .item-nine {
-  background: url(../images/bg-single-9.jpg) no-repeat;
+  background: url(../images/testimonial-9.jpg) no-repeat;
 }
 .onepage-one {
-  background: url(../images/bg-single-7.jpg) no-repeat;
+  background: url(../images/testimonial-7.jpg) no-repeat;
 }
 .onepage-seven {
-  background: url(../images/bg-single-1.jpg) no-repeat;
+  background: url(../images/testimonial-1.jpg) no-repeat;
 }
 .single-items {
   background-attachment: fixed;
@@ -2931,12 +2924,6 @@ blockquote.blockquote::before {
 /* ----- Paralax bg ends  ----- */
 
 /**------ Page Header -------**/
-.page_header {
-  background: url(../images/page-tittle.jpg) no-repeat;
-}
-.page_shop_header {
-  background: url(../images/page-tittle-1.jpg) no-repeat;
-}
 .page_header {
   -webkit-background-size: cover;
   background-size: cover;
@@ -3994,11 +3981,13 @@ footer .footer_panel p.address > i,
   color: rgba(87, 86, 86, 0.9);
 }
 
-.form-control:-moz-placeholder { /* Firefox 18- */
+.form-control:-moz-placeholder {
+  /* Firefox 18- */
   color: rgba(87, 86, 86, 0.9);
 }
 
-.form-control::-moz-placeholder {  /* Firefox 19+ */
+.form-control::-moz-placeholder {
+  /* Firefox 19+ */
   color: rgba(87, 86, 86, 0.9);
 }
 
