@@ -1,31 +1,26 @@
-FROM python:3.11.1-alpine3.17
-LABEL maintainer="Sheharyar Ahmad"
+ARG PYTHON_VERSION=3.10-slim-buster
 
-# Set Environment Variables
+FROM python:${PYTHON_VERSION}
+
+ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
-ENV PYTHONDONTWRITEBYCODE 1
 
-# Set Working Directory
+RUN mkdir -p /code
+
 WORKDIR /code
 
-# Copy Requirementss
-COPY ./requirements.txt /tmp/requirements.txt
+COPY requirements.txt /tmp/requirements.txt
 
-# Install Requirements
-RUN python -m venv /py && \
-    /py/bin/pip install --upgrade pip && \
-    # Dependencies for Psycopg2
-    apk add --update --no-cache postgresql-client && \
-    apk add --update --no-cache --virtual .tmp-build-deps \
-        build-base postgresql-dev musl-dev && \
-    /py/bin/pip install -r /tmp/requirements.txt && \
-    rm -rf /tmp && \
-    apk del .tmp-build-deps
+RUN set -ex && \
+    pip install --upgrade pip && \
+    pip install -r /tmp/requirements.txt && \
+    rm -rf /root/.cache/
 
-# Copy Project
 COPY . /code/
 
-# Expose the port 8000 for usage
+RUN python manage.py collectstatic --noinput
+
 EXPOSE 8000
 
+# replace demo.wsgi with <project_name>.wsgi
 CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "payment_project.wsgi"]
