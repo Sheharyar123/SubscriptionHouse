@@ -35,7 +35,7 @@
 body {
   padding: 0;
   margin: 0;
-  color: #a5a5a5;
+  color: #757575;
   font-size: 14px;
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
@@ -2169,8 +2169,8 @@ ul.bullet-list li::before {
 .pricing_item_detail {
   -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.35);
-  height: 600px;
   background-color: white;
+  height: 550px;
 }
 .pricing_item .pricing_price {
   padding: 15px 0 14px 0;
@@ -3938,6 +3938,7 @@ footer .footer_panel p.address > i,
   font-size: 40px;
   text-transform: uppercase;
   margin-bottom: 20px;
+  color: #f4f4f4;
 }
 
 .auth-form-link:hover {
@@ -3984,7 +3985,23 @@ footer .footer_panel p.address > i,
   background-color: #2b81dd;
 }
 
-.product-detail {
+.background-container {
   background-color: #212331;
   width: 100%;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: rgba(87, 86, 86, 0.9);
+}
+
+.form-control:-moz-placeholder { /* Firefox 18- */
+  color: rgba(87, 86, 86, 0.9);
+}
+
+.form-control::-moz-placeholder {  /* Firefox 19+ */
+  color: rgba(87, 86, 86, 0.9);
+}
+
+.form-control:-ms-input-placeholder {
+  color: rgba(87, 86, 86, 0.9);
 }

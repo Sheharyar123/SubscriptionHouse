@@ -5,27 +5,28 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
+  <div class="background-container">
+    <div class="container">
+      <div class="row h-100 justify-content-center align-items-center">
+        <div class="col-10 col-md-8 col-lg-6 form-margin">
+          <h1 class="text-center form-title">{% trans "Sign In" %}</h1>
+          <form method="POST" action="{% url 'account_login' %}">
+            {% csrf_token %}
+            {% for field in form %}
+              <div class="form__field">
+                  <label class="mb-2">{{ field.label }}</label>
+                  {{ field }}
+              </div>
+              {% endfor %} 
 
-  <div class="container">
-    <div class="row h-100 justify-content-center align-items-center">
-      <div class="col-10 col-md-8 col-lg-6 form-margin">
-        <h1 class="text-center form-title">{% trans "Sign In" %}</h1>
-        <form method="POST" action="{% url 'account_login' %}">
-          {% csrf_token %}
-          {% for field in form %}
-            <div class="form__field">
-                <label class="mb-2">{{ field.label }}</label>
-                {{ field }}
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>Not a member? <a href="{% url 'account_signup' %}" class="auth-form-link">Register</a></p>
             </div>
-            {% endfor %} 
-
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-          <!-- Register buttons -->
-          <div class="text-center">
-            <p>Not a member? <a href="{% url 'account_signup' %}" class="auth-form-link">Register</a></p>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   </div>

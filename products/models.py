@@ -28,6 +28,7 @@ class Product(models.Model):
     title = models.CharField(max_length=50)
     description = RichTextField()
     active = models.BooleanField(default=True)
+    is_featured = models.BooleanField(default=False)
     added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 

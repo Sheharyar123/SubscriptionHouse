@@ -4,7 +4,7 @@
 {% block title %}{{ product.title }}{% endblock title %}
 
 {% block content %}
-  <div class="product-detail">
+  <div class="background-container">
     <div class="container">
       <div class="row h-100 justify-content-center align-items-center">
         <div class="col-10 col-md-8 col-lg-6 form-margin">
@@ -16,7 +16,7 @@
                     <p class="bottom30">{{ product.title|title }}</p>
                     <div class="pricing_price darkcolor">
                         <span class="pricing_currency">
-                            <b>${{ product.price }}</b></span>/{% if product.title|title == "Linkedin Business Plan Coupons" %}6month{% else %}month{% endif %}
+                            <b>${{ product.price }}</b></span>/{% if product.is_featured %}6month{% else %}month{% endif %}
                         
                     </div>
                     <p>{{ product.description|safe|linebreaks }}</p>
@@ -37,10 +37,10 @@
                       </div>
                     </form>
                     {% comment %} {{ form.render }} {% endcomment %}
-                    <form action="{% url 'payments:process_payment' %}" method="POST">
+                    {% comment %} <form action="{% url 'payments:process_payment' %}" method="POST">
                       {% csrf_token %}
                       <button type="submit" class="card-btn">Pay with Card</button>
-                    </form>
+                    </form> {% endcomment %}
             </div>
           </div>
         </div>
