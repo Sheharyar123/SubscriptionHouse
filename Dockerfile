@@ -27,3 +27,5 @@ COPY . /code/
 
 # Expose the port 8000 for usage
 EXPOSE 8000
+
+CMD ["gunicorn", "--bind", ":8000", "--workers", "2", "payment_project.wsgi"]
