@@ -51,7 +51,9 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
         context = super().get_context_data(**kwargs)
         product = self.get_object()
         user = self.request.user
-        order_item = OrderItem.objects.create(product=product, user=user, paid=False)
+        order_item, created = OrderItem.objects.get_or_create(
+            product=product, user=user, paid=False
+        )
         host = self.request.get_host()
         paypal_dict = {
             "business": settings.PAYPAL_RECEIVER_EMAIL,

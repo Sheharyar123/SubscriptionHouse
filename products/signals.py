@@ -1,14 +1,13 @@
 from django.conf import settings
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404
-from django.urls import reverse
 from .models import OrderItem
 from paypal.standard.ipn.signals import valid_ipn_received
 from django.dispatch import receiver
 
 
 @receiver(valid_ipn_received)
-def payment_notification(sender, **kwargs):
+def payment_notification(sender, request, **kwargs):
     ipn = sender
     if ipn.payment_status == "Completed":
         # payment was successful
@@ -37,17 +36,21 @@ def payment_notification(sender, **kwargs):
             )
 
             # Email to owner
-            email_subject = "Email from Wasif Gondal"
-            email_message = f"{user.name} has bought the following product.\n{reverse(order_item.product.get_absolute_url)}.\n{user.name}'s email is {user.email} and phone no is {user.phone_no}."
-            email_sender = "phantomdjangouser@gmail.com"
-            email_to = [settings.EMAIL_HOST_USER,]
+            product_url = request.build_absolute_uri(
+                order_item.product.get_absolute_url()
+            )
             send_mail(
-                email_subject,
-                email_message,
-                email_sender,
-                email_to,
+                subject="Email from Subscriptions House",
+                message=f"{user.name} has bought the following product.\n{product_url}\nCustomer's email is {user.email} and phone no is {user.phone_no}",
+                email_from=settings.EMAIL_HOST_USER,
+                recipient_list=["talha.sharif380@gmail.com"],
                 fail_silently=False,
             )
+
+        else:
+            message = f"""Hi {user.name}.\nSorry there was a problem processing your payment.
+                    Kindly try again!!"""
+            send_mail(subject, message, email_from, recipient_list, fail_silently=False)
     else:
         message = f"""Hi {user.name}.\nSorry there was a problem processing your payment.
                    Kindly try again!!"""

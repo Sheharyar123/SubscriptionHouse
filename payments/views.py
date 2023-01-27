@@ -1,9 +1,11 @@
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 
 
 @csrf_exempt
+@login_required(login_url="account_login")
 def payment_completed(request):
     user = request.user
     order_item = user.order_items.last()
@@ -21,6 +23,7 @@ def payment_completed(request):
 
 
 @csrf_exempt
+@login_required(login_url="account_login")
 def payment_cancelled(request):
     messages.error(
         request, "There was a problem processing your payment. Kindly try again!"
