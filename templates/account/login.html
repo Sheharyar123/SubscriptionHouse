@@ -17,13 +17,19 @@
                   <label class="mb-2">{{ field.label }}</label>
                   {{ field }}
               </div>
-              {% endfor %} 
-
+            {% endfor %} 
+              {% comment %} <div class="row mb-4">
+            
+                <div class="col">
+                  <!-- Simple link -->
+                  <a href="{% url 'account_reset_password' %}" style="float: right; color: #f4f4f4">Forgot password?</a>
+                </div>
+              </div> {% endcomment %}
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
             <!-- Register buttons -->
             <div class="text-center">
-              <p>Not a member? <a href="{% url 'account_signup' %}" class="auth-form-link">Register</a></p>
+              <p class="member-text">Not a member? <a href="{% url 'account_signup' %}" class="auth-form-link">Register</a></p>
             </div>
           </form>
         </div>

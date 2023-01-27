@@ -1,6 +1,11 @@
 from django import forms
 
-from allauth.account.forms import LoginForm, SignupForm
+from allauth.account.forms import (
+    LoginForm,
+    SignupForm,
+    ResetPasswordForm,
+    ResetPasswordKeyForm,
+)
 
 
 class CustomLoginForm(LoginForm):
@@ -60,3 +65,17 @@ class CustomSignupForm(SignupForm):
         user.phone_no = self.cleaned_data["phone_no"]
         user.save()
         return user
+
+
+# class CustomResetPasswordKeyForm(ResetPasswordKeyForm):
+#     password1 = forms.CharField(widget=forms.PasswordInput, label="Password")
+#     password2 = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
+
+#     def __init__(self, *args, **kwargs):
+#         super(CustomSignupForm, self).__init__(*args, **kwargs)
+#         self.fields["password1"].widget.attrs.update(
+#             {"class": "form-control mb-4", "placeholder": "••••••••"}
+#         )
+#         self.fields["password2"].widget.attrs.update(
+#             {"class": "form-control mb-4", "placeholder": "••••••••"}
+#         )

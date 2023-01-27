@@ -7,14 +7,14 @@ from django.dispatch import receiver
 
 
 @receiver(valid_ipn_received)
-def payment_notification(sender, request, **kwargs):
+def payment_notification(sender, **kwargs):
     ipn = sender
     if ipn.payment_status == "Completed":
         # payment was successful
         order_item = get_object_or_404(OrderItem, id=ipn.invoice)
         subject = "Welcome to Subscription House."
         user = order_item.user
-        email_from = settings.EMAIL_HOST_USER
+        from_email = settings.EMAIL_HOST_USER
         recipient_list = [
             user.email,
         ]
@@ -30,19 +30,16 @@ def payment_notification(sender, request, **kwargs):
             send_mail(
                 subject,
                 message,
-                email_from,
+                from_email,
                 recipient_list,
                 fail_silently=False,
             )
 
             # Email to owner
-            product_url = request.build_absolute_uri(
-                order_item.product.get_absolute_url()
-            )
             send_mail(
                 subject="Email from Subscriptions House",
-                message=f"{user.name} has bought the following product.\n{product_url}\nCustomer's email is {user.email} and phone no is {user.phone_no}",
-                email_from=settings.EMAIL_HOST_USER,
+                message=f"{user.name} has bought the following product.\n'{order_item.product.title} - {order_item.product.plan_type} - ${order_item.product.price}'.\nCustomer's email is {user.email} and phone no is {user.phone_no}",
+                from_email=settings.EMAIL_HOST_USER,
                 recipient_list=["talha.sharif380@gmail.com"],
                 fail_silently=False,
             )
@@ -50,8 +47,8 @@ def payment_notification(sender, request, **kwargs):
         else:
             message = f"""Hi {user.name}.\nSorry there was a problem processing your payment.
                     Kindly try again!!"""
-            send_mail(subject, message, email_from, recipient_list, fail_silently=False)
+            send_mail(subject, message, from_email, recipient_list, fail_silently=False)
     else:
         message = f"""Hi {user.name}.\nSorry there was a problem processing your payment.
                    Kindly try again!!"""
-        send_mail(subject, message, email_from, recipient_list, fail_silently=False)
+        send_mail(subject, message, from_email, recipient_list, fail_silently=False)
