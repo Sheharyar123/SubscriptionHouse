@@ -37,15 +37,13 @@
             <div class="row">
             <div class="col-md-12 col-xs-12">
                 <ul class="links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#aboutus">Services</a></li>
-                <!-- <li><a href="javascript:void(0)">Our Team</a></li> -->
-                <li><a href="#gallery">About</a></li>
-                <li><a href="#pricing">Packages</a></li>
-                <li><a href="faq">FAQs</a></li>
-                <li><a href="#reviews">Testimonials</a></li>
-                <!-- <li><a href="javascript:void(0)">Privacy Policy</a></li> -->
-                <li><a href="javascript:void(0)">Contact Us</a></li>
+                <li><a href="{% url 'products:index' %}#home">Home</a></li>
+                <li><a href="{% url 'products:index' %}#aboutus">Services</a></li>
+                <li><a href="{% url 'products:index' %}#gallery">About</a></li>
+                <li><a href="{% url 'products:index' %}#pricing">Packages</a></li>
+                <li><a href="{% url 'products:index' %}#faq">FAQs</a></li>
+                <li><a href="{% url 'products:index' %}#reviews">Testimonials</a></li>
+                <li><a href="{% url 'products:index' %}#contactus">Contact Us</a></li>
                 </ul>
             </div>
             </div>

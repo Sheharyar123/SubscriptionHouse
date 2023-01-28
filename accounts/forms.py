@@ -70,11 +70,9 @@ class CustomResetPasswordKeyForm(ResetPasswordKeyForm):
     password1 = forms.CharField(widget=forms.PasswordInput, label="Password")
     password2 = forms.CharField(widget=forms.PasswordInput, label="Confirm Password")
 
-    def __init__(self, *args, **kwargs):
-        super(CustomSignupForm, self).__init__(*args, **kwargs)
-        self.fields["password1"].widget.attrs.update(
-            {"class": "form-control mb-4", "placeholder": "••••••••"}
-        )
-        self.fields["password2"].widget.attrs.update(
-            {"class": "form-control mb-4", "placeholder": "••••••••"}
-        )
+    password1.widget.attrs.update(
+        {"class": "form-control mb-4", "placeholder": "••••••••"}
+    )
+    password2.widget.attrs.update(
+        {"class": "form-control mb-4", "placeholder": "••••••••"}
+    )

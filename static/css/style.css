@@ -3985,6 +3985,25 @@ footer .footer_panel p.address > i,
   width: 100%;
 }
 
+.form__field label {
+  font-size: 18px;
+}
+
+.form-error {
+  color: #DC4C64;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.5;
+}
+
+.forgot-password {
+  float: right;
+  color: #f4f4f4;
+}
+
+.forgot-password:hover {
+  color: #2b81dd;
+}
+
 .form-control::-webkit-input-placeholder {
   color: rgba(87, 86, 86, 0.9);
 }
