@@ -145,6 +145,7 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 LOGIN_REDIRECT_URL = "products:index"
 ACCOUNT_LOGOUT_REDIRECT = "products:index"
 ACCOUNT_LOGOUT_ON_GET = True
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[subscriptionshouse.fly.dev] "
 DEFAULT_FROM_EMAIL = env.str("EMAIL_HOST_USER")
 
 # Custom allauth forms
