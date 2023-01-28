@@ -18,13 +18,12 @@
                   {{ field }}
               </div>
             {% endfor %} 
-              {% comment %} <div class="row mb-4">
-            
+              <div class="row mb-4">
                 <div class="col">
                   <!-- Simple link -->
-                  <a href="{% url 'account_reset_password' %}" style="float: right; color: #f4f4f4">Forgot password?</a>
+                  <a href="{% url 'account_reset_password' %}" class="forgot-password">Forgot password?</a>
                 </div>
-              </div> {% endcomment %}
+              </div>
             <!-- Submit button -->
             <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
             <!-- Register buttons -->
