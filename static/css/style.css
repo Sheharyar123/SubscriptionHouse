@@ -3889,32 +3889,6 @@ footer .footer_panel p.address > i,
   text-align: center;
 }
 
-@media (max-width: 1400px) {
-  .split-box .padding {
-    padding: 5.5rem 0;
-  }
-}
-
-@media (max-width: 1266px) {
-  .split-box .padding {
-    padding: 4rem 0;
-  }
-}
-@media (min-width: 768px) and (max-width: 1024px) {
-  .split-box .padding {
-    padding: 3rem 0;
-  }
-}
-@media (max-width: 992px) {
-  .split-box {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-  .half-section .img-container {
-    margin-bottom: 25px;
-  }
-}
-
 .form-margin,
 .payment-margin {
   margin-top: 180px;
@@ -3923,7 +3897,7 @@ footer .footer_panel p.address > i,
 
 .form-title,
 .payment-title {
-  font-size: 35px;
+  font-size: 30px;
   text-transform: uppercase;
   margin-bottom: 20px;
   color: #f4f4f4;
@@ -4021,3 +3995,40 @@ footer .footer_panel p.address > i,
 .form-control:-ms-input-placeholder {
   color: rgba(87, 86, 86, 0.9);
 }
+
+
+@media (max-width: 1400px) {
+  .split-box .padding {
+    padding: 5.5rem 0;
+  }
+}
+
+@media (max-width: 1266px) {
+  .split-box .padding {
+    padding: 4rem 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  .split-box .padding {
+    padding: 3rem 0;
+  }
+}
+@media (max-width: 992px) {
+  .split-box {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .half-section .img-container {
+    margin-bottom: 25px;
+  }
+  .form-title {
+    font-size: 25px;
+  }
+  .payment-title {
+    font-size: 25px;
+  }
+  .form__field label {
+    font-size: 15px;
+  } 
+}
+

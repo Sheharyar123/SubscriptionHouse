@@ -159,12 +159,12 @@ PAYPAL_RECEIVER_EMAIL = env.str("PAYPAL_RECEIVER_EMAIL")
 PAYPAL_TEST = env.bool("PAYPAL_TEST")
 
 # SMTP Settings
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_USE_TLS = True
-EMAIL_PORT = 587
-EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
-EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+# EMAIL_HOST = "smtp.gmail.com"
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 587
+# EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
+# EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
 # CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
 CSRF_TRUSTED_ORIGINS = [
