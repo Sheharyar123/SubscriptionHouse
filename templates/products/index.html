@@ -101,9 +101,17 @@
 						class="pricing_item {{ product.background_type }} text-center top40 wow fadeIn"
 						data-wow-deeay="400ms"
 						>
-							<h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
-							<p class="bottom30">{{ product.title|title }}</p>
-							<div class="pricing_price darkcolor">
+							{% if product.title|title == "Get Hired" %}
+								<h3 class="font-light darkcolor"><b>{{ product.plan_type|title }}</b></h3>
+								<p class="bottom30">{{ product.title|title }}</p>
+							{% elif product.is_featured %}
+								<h4 class="font-light darkcolor"><b>Linkedin Business<br>Coupon</b></h4>
+							{% elif product.title|title == "Linkedin Recruiter Coupon" %}
+								<h4 class="font-light darkcolor"><b>Linkedin Recruiter<br>Coupon</b></h4>
+							{% else %}
+								<h4 class="font-light darkcolor"><b>{{ product.title|title }}</b></h4>
+							{% endif %}
+								<div class="pricing_price darkcolor">
 								<span class="pricing_currency">
 									<b>${{ product.price }}</b></span>/
 									{% if product.is_featured %}6month{% else %}month{% endif %}

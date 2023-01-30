@@ -20,6 +20,7 @@ DEBUG = env.bool("DEBUG", default=False)
 # ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 ALLOWED_HOSTS = ["127.0.0.1", "localhost", "subscriptionshouse.fly.dev"]
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -135,7 +136,7 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -145,7 +146,7 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 LOGIN_REDIRECT_URL = "products:index"
 ACCOUNT_LOGOUT_REDIRECT = "products:index"
 ACCOUNT_LOGOUT_ON_GET = True
-ACCOUNT_EMAIL_SUBJECT_PREFIX = "[subscriptionshouse.fly.dev] "
+ACCOUNT_EMAIL_SUBJECT_PREFIX = "[subscriptionshouse] "
 DEFAULT_FROM_EMAIL = env.str("EMAIL_HOST_USER")
 
 # Custom allauth forms
@@ -167,11 +168,11 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 
-# CSRF_TRUSTED_ORIGINS = env.list("CSRF_TRUSTED_ORIGINS")
 CSRF_TRUSTED_ORIGINS = [
     "https://subscriptionshouse.fly.dev",
     "http://subscriptionshouse.fly.dev",
 ]
+# CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"]
 # Security Settings
 SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
 SECURE_HSTS_SECONDS = env.int("DJANGO_SECURE_HSTS_SECONDS", default=2592000)  # 30 days
