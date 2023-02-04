@@ -11,9 +11,14 @@
               <div
                 class="pricing_item_detail text-center top40 wow fadeIn"
                 data-wow-deeay="400ms"
+                {% if not product.plan_type %}style="height:500px"{% endif %}
                 >
+                  {% if product.plan_type %}
                     <h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
                     <p class="bottom30">{{ product.title|title }}</p>
+                  {% else %}
+                    <h3 class="font-light darkcolor"><b>{{ product.title|title }}</b></h3>
+                  {% endif %}
                     <div class="pricing_price darkcolor">
                         <span class="pricing_currency">
                             <b>${{ product.price }}</b></span>/{% if product.is_featured %}6month{% else %}month{% endif %}

@@ -23,7 +23,9 @@ class Product(models.Model):
     )
     id = models.UUIDField(default=uuid.uuid4, primary_key=True, editable=False)
     background_type = models.CharField(choices=BACKGROUND_TYPE, max_length=30)
-    plan_type = models.CharField(choices=PLAN_TYPE, max_length=30)
+    plan_type = models.CharField(
+        choices=PLAN_TYPE, max_length=30, null=True, blank=True
+    )
     price = models.DecimalField(max_digits=8, decimal_places=0)
     title = models.CharField(max_length=50)
     description = RichTextField()
@@ -33,10 +35,13 @@ class Product(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
-        ordering = ["-updated_on", "-added_on"]
+        ordering = ["-updated_on", "added_on"]
 
     def __str__(self):
-        return f"{self.plan_type} - {self.title}"
+        if self.plan_type:
+            return f"{self.plan_type} - {self.title}"
+        else:
+            return self.title
 
     def get_absolute_url(self):
         return reverse("products:product_detail", kwargs={"pk": self.pk})

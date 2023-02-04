@@ -105,7 +105,7 @@
 								<h3 class="font-light darkcolor"><b>{{ product.plan_type|title }}</b></h3>
 								<p class="bottom30">{{ product.title|title }}</p>
 							{% elif product.is_featured %}
-								<h4 class="font-light darkcolor"><b>Linkedin Business<br>Coupon</b></h4>
+								<h4 class="font-light darkcolor"><b>Linkedin Premium<br>Account</b></h4>
 							{% elif product.title|title == "Linkedin Recruiter Coupon" %}
 								<h4 class="font-light darkcolor"><b>Linkedin Recruiter<br>Coupon</b></h4>
 							{% else %}
@@ -123,6 +123,7 @@
 						</div>
 					</div>
 				{% endfor %}
+				<a href="{% url 'products:product_list' %}" class="btn_common btn_primary plans-btn" style="margin: 0 auto;">View All Plans</a>
 			</div>
 		</div>
 	</section>

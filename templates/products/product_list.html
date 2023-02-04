@@ -1,0 +1,84 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}| Products{% endblock title %}
+
+
+{% block content %}
+
+<!--Pricings-->
+    <div class="background-container">
+        <section class="padding" id="pricing">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center wow fadeIn" data-wow-delay="300ms" style="margin-top: 120px;">
+                    <h2 style="color: #cbcbcb;">
+                    <span>Pricing</span> Tables <span class="divider-center"></span>
+                    </h2>
+                    <p class="bottom30 margin10" style="color: #cbcbcb;">
+                    Get the features you need and save money with our flexible pricing
+                    plans.
+                    </p>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for product in product_list %}
+                        <div class="col-md-4">
+                            <div
+                            class="pricing_item {{ product.background_type }} text-center top40 wow fadeIn"
+                            data-wow-deeay="400ms"
+                            {% if not product.plan_type %}style="height:520px"{% endif %}
+                            >
+                                {% if product.title|title == "Get Hired" %}
+                                    <h3 class="font-light darkcolor"><b>{{ product.plan_type|title }}</b></h3>
+                                    <p class="bottom10">{{ product.title }}</p>
+                                {% elif product.is_featured %}
+                                    <h4 class="font-light darkcolor"><b>Linkedin Premium<br>Account</b></h4>
+                                {% elif product.title|title == "Linkedin Recruiter Coupon" %}
+                                    <h4 class="font-light darkcolor"><b>Linkedin Recruiter<br>Coupon</b></h4>
+                                {% else %}
+                                    <h4 class="font-light darkcolor"><b>{{ product.title}}</b></h4>
+                                {% endif %}
+                                    <div class="pricing_price darkcolor">
+                                    <span class="pricing_currency">
+                                        <b>${{ product.price }}</b></span>/
+                                        {% if product.is_featured %}6month{% else %}month{% endif %}
+                                </div>
+                                <p>{{ product.description|safe|linebreaks }}</p>
+                                <a class="btn_common btn_{{ product.background_type }}" href="{{ product.get_absolute_url }}"
+                                    >Choose Plan</a
+                                >
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <div id="wrapper">
+                        <div class="b-pagination-outer">
+                            <ul id="border-pagination">
+                            {% if page_obj.has_previous %}
+                                <li><a href="?page={{ page_obj.previous_page_number }}">«</a></li>
+                            {% else %}
+                                <li><a href="#" tabindex="-1" aria-disabled="True" class="disabled">«</a></li>
+                            {% endif %}
+
+                            {% for i in page_obj.paginator.page_range %}
+                                {% if page_obj.number == i %}
+                                    <li><a href="?page={{ i }}" class="active">{{ i }}</a></li>
+                                {% else %}
+                                    <li><a href="?page={{ i }}">{{ i }}</a></li>
+                                {% endif %}
+                            {% endfor %}
+
+                            {% if page_obj.has_next %}
+                                <li><a href="?page={{ page_obj.next_page_number }}">»</a></li>
+                            {% else %}
+                                <li ><a href="#" tabindex="-1" aria-disabled="True" class="disabled">»</a></li>
+                            {% endif %}
+                            </ul> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Pricings-->
+    </div>
+{% endblock content %}

@@ -4,7 +4,14 @@ from .models import Product, OrderItem
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ["title", "plan_type", "price", "active", "is_featured"]
+    list_display = [
+        "title",
+        "plan_type",
+        "background_type",
+        "price",
+        "active",
+        "is_featured",
+    ]
     list_editable = [
         "active",
         "is_featured",

@@ -4,15 +4,15 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
-from django.views.generic import View, DetailView
+from django.views.generic import View, ListView, DetailView
 from django.conf import settings
 from .models import Product, OrderItem
 from .forms import ContactForm
 
 
-class ProductListView(View):
+class HomePageView(View):
     def get(self, request, *args, **kwargs):
-        product_list = Product.objects.filter(active=True)
+        product_list = Product.objects.filter(active=True)[:3]
         context = {"product_list": product_list, "form": ContactForm}
         return render(request, "products/index.html", context)
 
@@ -36,6 +36,13 @@ class ProductListView(View):
             )
             messages.success(request, "Your message was sent successfully")
             return redirect("products:index")
+
+
+class ProductListView(ListView):
+    model = Product
+    template_name = "products/product_list.html"
+    context_object_name = "product_list"
+    paginate_by = 6
 
 
 class ProductDetailView(LoginRequiredMixin, DetailView):
