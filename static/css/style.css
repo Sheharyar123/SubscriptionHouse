@@ -56,6 +56,10 @@ ul {
   padding: 0;
   list-style: none;
 }
+
+li {
+  font-size: 16px;
+}
 a {
   color: inherit;
 }
@@ -2227,7 +2231,7 @@ ul.bullet-list li::before {
 
 @media (max-width: 500px) {
   .pricing_item {
-    height: 500px;
+    height: 520px;
   }
 }
 
@@ -3976,7 +3980,7 @@ footer .footer_panel p.address > i,
 }
 
 .form-error {
-  color: #DC4C64;
+  color: #dc4c64;
   font-family: "Open Sans", sans-serif;
   line-height: 1.5;
 }
@@ -4048,9 +4052,8 @@ footer .footer_panel p.address > i,
   }
   .form__field label {
     font-size: 15px;
-  } 
+  }
 }
-
 
 /* Pagination */
 #wrapper {
@@ -4063,16 +4066,15 @@ footer .footer_panel p.address > i,
   margin: 0 auto;
   text-align: center;
   overflow: hidden;
-  display: flex
+  display: flex;
 }
 #border-pagination {
   margin: 0 auto;
   padding: 0;
-  text-align: center
+  text-align: center;
 }
 #border-pagination li {
   display: inline;
-
 }
 #border-pagination li a {
   display: block;
@@ -4085,13 +4087,13 @@ footer .footer_panel p.address > i,
 }
 #border-pagination li a {
   -webkit-transition: background-color 0.4s;
-  transition: background-color 0.4s
+  transition: background-color 0.4s;
 }
 #border-pagination li a.active {
   background-color: #4caf50;
   color: #fff;
 }
-#border-pagination li a:hover:not(.disabled, .active){
+#border-pagination li a:hover:not(.disabled, .active) {
   background: #979797;
 }
 

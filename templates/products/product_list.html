@@ -11,7 +11,7 @@
         <section class="padding" id="pricing">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 text-center wow fadeIn" data-wow-delay="300ms" style="margin-top: 120px;">
+                    <div class="col-md-12 text-center" style="margin-top: 120px;">
                     <h2 style="color: #cbcbcb;">
                     <span>Pricing</span> Tables <span class="divider-center"></span>
                     </h2>
@@ -27,17 +27,17 @@
                             <div
                             class="pricing_item {{ product.background_type }} text-center top40 wow fadeIn"
                             data-wow-deeay="400ms"
-                            {% if not product.plan_type %}style="height:520px"{% endif %}
+                            {% if not product.plan_type %}style="height:540px"{% endif %}
                             >
                                 {% if product.title|title == "Get Hired" %}
                                     <h3 class="font-light darkcolor"><b>{{ product.plan_type|title }}</b></h3>
                                     <p class="bottom10">{{ product.title }}</p>
-                                {% elif product.is_featured %}
-                                    <h4 class="font-light darkcolor"><b>Linkedin Premium<br>Account</b></h4>
+                                {% comment %} {% elif product.is_featured %}
+                                    <h3 class="font-light darkcolor"><b>Linkedin Premium<br>Account</b></h3>
                                 {% elif product.title|title == "Linkedin Recruiter Coupon" %}
-                                    <h4 class="font-light darkcolor"><b>Linkedin Recruiter<br>Coupon</b></h4>
+                                    <h3 class="font-light darkcolor"><b>Linkedin Recruiter<br>Coupon</b></h3> {% endcomment %}
                                 {% else %}
-                                    <h4 class="font-light darkcolor"><b>{{ product.title}}</b></h4>
+                                    <h3 class="font-light darkcolor"><b>{{ product.title}}</b></h3>
                                 {% endif %}
                                     <div class="pricing_price darkcolor">
                                     <span class="pricing_currency">
