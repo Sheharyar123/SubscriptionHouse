@@ -18,7 +18,12 @@ SECRET_KEY = env.str("SECRET_KEY")
 DEBUG = env.bool("DEBUG", default=False)
 
 # ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", "subscriptionshouse.fly.dev"]
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "subscriptionshouse.fly.dev",
+    "subscriptionshouse.com",
+]
 
 
 # Application definition
@@ -119,7 +124,7 @@ USE_TZ = True
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"  # new
+STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"  # new
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
@@ -171,6 +176,8 @@ EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
 CSRF_TRUSTED_ORIGINS = [
     "https://subscriptionshouse.fly.dev",
     "http://subscriptionshouse.fly.dev",
+    "https://subscriptionshouse.com",
+    "http://subscriptionshouse.com",
 ]
 # CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"]
 # Security Settings
