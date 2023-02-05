@@ -27,15 +27,11 @@
                             <div
                             class="pricing_item {{ product.background_type }} text-center top40 wow fadeIn"
                             data-wow-deeay="400ms"
-                            {% if not product.plan_type %}style="height:540px"{% endif %}
+                            {% if not product.plan_type %}style="height:560px"{% endif %}
                             >
                                 {% if product.title|title == "Get Hired" %}
                                     <h3 class="font-light darkcolor"><b>{{ product.plan_type|title }}</b></h3>
                                     <p class="bottom10">{{ product.title }}</p>
-                                {% comment %} {% elif product.is_featured %}
-                                    <h3 class="font-light darkcolor"><b>Linkedin Premium<br>Account</b></h3>
-                                {% elif product.title|title == "Linkedin Recruiter Coupon" %}
-                                    <h3 class="font-light darkcolor"><b>Linkedin Recruiter<br>Coupon</b></h3> {% endcomment %}
                                 {% else %}
                                     <h3 class="font-light darkcolor"><b>{{ product.title}}</b></h3>
                                 {% endif %}

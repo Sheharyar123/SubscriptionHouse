@@ -12,7 +12,7 @@ from .forms import ContactForm
 
 class HomePageView(View):
     def get(self, request, *args, **kwargs):
-        product_list = Product.objects.filter(active=True)[:3]
+        product_list = Product.objects.filter(active=True)[:6]
         context = {"product_list": product_list, "form": ContactForm}
         return render(request, "products/index.html", context)
 
