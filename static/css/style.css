@@ -1446,6 +1446,10 @@ a {
   .side-nav .navbar-nav .nav-link > span {
     display: none;
   }
+  .subscription-text {
+    font-size: 30px;
+    text-align: center;
+  }
 }
 
 /* ---------- Revolution Slider ---------- */
@@ -2172,7 +2176,7 @@ ul.bullet-list li::before {
 }
 
 .pricing_item_detail {
-  height: 550px;
+  height: 500px;
 }
 .pricing_item .pricing_price {
   padding: 15px 0 14px 0;
@@ -2235,11 +2239,15 @@ ul.bullet-list li::before {
   }
 }
 
-@media (min-width: 500px) and (max-width: 1000px) {
+@media (min-width: 750px) and (max-width: 1000px) {
   .pricing_item {
     display: inline-block;
     width: 100%;
     height: 540px;
+  }
+  .subscription-text {
+    font-size: 40px;
+    text-align: center;
   }
 }
 @media (max-width: 992px) {
@@ -4101,5 +4109,14 @@ footer .footer_panel p.address > i,
   #border-pagination li a {
     padding: 10px 15px;
     font-size: 14px;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1200px) {
+  .col-md-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 }
