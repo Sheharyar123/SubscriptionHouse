@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, OrderItem
+from .models import Product, OrderItem, Client
 
 
 @admin.register(Product)
@@ -34,3 +34,19 @@ class OrderItemAdmin(admin.ModelAdmin):
         "paid",
         "created_on",
     ]
+
+
+@admin.register(Client)
+class ClientAdmin(admin.ModelAdmin):
+    list_display = [
+        "user",
+        "address",
+        "job_titles",
+        "ethnicity",
+        "location",
+        "job_type",
+        "sponsorship",
+        "authorized",
+    ]
+    list_editable = ["sponsorship", "authorized"]
+    list_filter = ["job_type", "location", "sponsorship", "authorized"]

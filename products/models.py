@@ -86,3 +86,44 @@ class OrderItem(models.Model):
     @property
     def customer_phoneNo(self):
         return self.user.phone_no
+
+
+JOB_CHOICES = (
+    ("REMOTE", "REMOTE"),
+    ("HYBRID", "HYBRID"),
+    ("ON-SITE", "ON-SITE"),
+)
+YES_OR_NO = (
+    (True, "Yes"),
+    (False, "No"),
+)
+
+
+class Client(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(
+        Product,
+        on_delete=models.CASCADE,
+        related_name="client_forms",
+    )
+    address = models.CharField(max_length=255)
+    job_titles = models.CharField(max_length=255)
+    ethnicity = models.CharField(max_length=50)
+    race = models.CharField(max_length=50)
+    location = models.CharField(max_length=255)
+    salary = models.CharField(max_length=255)
+    native_language = models.CharField(max_length=100)
+    nationality = models.CharField(max_length=100)
+    authorized = models.BooleanField(choices=YES_OR_NO)
+    sponsorship = models.BooleanField(choices=YES_OR_NO)
+    job_type = models.CharField(choices=JOB_CHOICES, max_length=20)
+    disability = models.CharField(max_length=255, null=True, blank=True)
+    resume = models.FileField()
+    created_on = models.DateTimeField(auto_now_add=True)
+    updated_on = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-updated_on", "-created_on"]
+
+    def __str__(self):
+        return f"{self.user.name}'s LinkedIn Form"

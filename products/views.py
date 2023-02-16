@@ -6,8 +6,9 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.views.generic import View, ListView, DetailView
 from django.conf import settings
-from .models import Product, OrderItem
-from .forms import ContactForm
+from .models import Product, OrderItem, Client
+from .forms import ContactForm, ClientForm
+from .utils import special_product
 
 
 class HomePageView(View):
@@ -43,6 +44,10 @@ class ProductListView(ListView):
     template_name = "products/product_list.html"
     context_object_name = "product_list"
     paginate_by = 6
+
+    def get_queryset(self):
+        product_list = Product.objects.filter(active=True)
+        return product_list
 
 
 class ProductDetailView(LoginRequiredMixin, DetailView):
@@ -80,3 +85,38 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
         else:
             context["action"] = "https://www.sandbox.paypal.com/cgi-bin/webscr"
         return context
+
+
+class ClientFormView(LoginRequiredMixin, View):
+    def get(self, request, *args, **kwargs):
+        form = ClientForm(
+            initial={
+                "name": request.user.name,
+                "email": request.user.email,
+                "phone_no": request.user.phone_no,
+            }
+        )
+        context = {"form": form}
+        return render(request, "products/client_form.html", context)
+
+    def post(self, request, *args, **kwargs):
+        form = ClientForm(request.POST, request.FILES)
+        print(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data.get("name")
+            email = form.cleaned_data.get("email")
+            phone_no = form.cleaned_data.get("phone_no")
+            product = special_product()
+            client_form = form.save(commit=False)
+            request.user.name = name
+            request.user.email = email
+            request.user.phone_no = phone_no
+            request.user.save()
+            client_form.user = request.user
+            client_form.product = product
+            client_form.save()
+            messages.success(request, "Your form was submitted successfully!")
+            return redirect(product.get_absolute_url())
+        else:
+            context = {"form": form}
+            return render(request, "products/client_form.html", context)
