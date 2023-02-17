@@ -147,7 +147,7 @@ ngrok.exe
 # Docker Compose
 docker-compose-prod.yml
 
-# Static files
+# Static Files
 staticfiles/
 
 # Fly Files

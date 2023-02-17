@@ -1,5 +1,6 @@
 from django import forms
 from .models import Client, JOB_CHOICES, YES_OR_NO
+from .validators import allow_only_images
 
 
 class ContactForm(forms.Form):
@@ -66,6 +67,10 @@ class ClientForm(forms.ModelForm):
     job_type = forms.CharField(max_length=20, widget=forms.Select(choices=JOB_CHOICES))
     authorized = forms.ChoiceField(choices=YES_OR_NO)
     sponsorship = forms.ChoiceField(choices=YES_OR_NO)
+    resume = forms.FileField(
+        widget=forms.FileInput(attrs={"class": "form-control mb-4"}),
+        validators=[allow_only_images],
+    )
 
     class Meta:
         model = Client
@@ -133,4 +138,3 @@ class ClientForm(forms.ModelForm):
         self.fields["job_type"].widget.attrs.update({"class": "form-control mb-4"})
         self.fields["authorized"].widget.attrs.update({"class": "form-control mb-4"})
         self.fields["sponsorship"].widget.attrs.update({"class": "form-control mb-4"})
-        self.fields["resume"].widget.attrs.update({"class": "form-control mb-4"})

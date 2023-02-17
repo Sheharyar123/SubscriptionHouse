@@ -1,10 +1,10 @@
 from ckeditor.fields import RichTextField
+from cloudinary.models import CloudinaryField
 from datetime import timedelta
 from django.contrib.auth import get_user_model
 from django.db import models
 from django.utils import timezone
 import uuid
-
 from django.urls import reverse
 
 User = get_user_model()
@@ -118,12 +118,13 @@ class Client(models.Model):
     sponsorship = models.BooleanField(choices=YES_OR_NO)
     job_type = models.CharField(choices=JOB_CHOICES, max_length=20)
     disability = models.CharField(max_length=255, null=True, blank=True)
-    resume = models.FileField()
+    resume = CloudinaryField("image")
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
     class Meta:
         ordering = ["-updated_on", "-created_on"]
+        verbose_name_plural = "Client Forms"
 
     def __str__(self):
         return f"{self.user.name}'s LinkedIn Form"
