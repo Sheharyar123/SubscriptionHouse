@@ -17,11 +17,18 @@
                     <h3 class="font-light darkcolor"><b>{{ product.plan_type|upper }}</b></h3>
                     <p class="bottom30">{{ product.title|title }}</p>
                   {% else %}
-                    <h3 class="font-light darkcolor"><b>{{ product.title|title }}</b></h3>
+                    <h3 class="font-light darkcolor"><b>{{ product.title }}</b></h3>
                   {% endif %}
                     <div class="pricing_price darkcolor">
                         <span class="pricing_currency">
-                            <b>${{ product.price }}</b></span>/{% if product.is_featured %}6month{% else %}month{% endif %}
+                            <b>${{ product.price }}</b></span>/
+                            {% if product.is_featured and product.title|title == "Get Hired" %}
+                            14days
+                            {% elif product.is_featured %}
+                            6months
+                            {% else %}
+                            month
+                            {% endif %}
                         
                     </div>
                     <p>{{ product.description|safe|linebreaks }}</p>

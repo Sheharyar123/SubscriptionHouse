@@ -54,6 +54,7 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
     model = Product
     template_name = "products/product_detail.html"
     context_object_name = "product"
+    login_url = "account_signup"
 
     def get_object(self):
         product = get_object_or_404(Product, id=self.kwargs.get("pk"))
@@ -88,6 +89,8 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
 
 
 class ClientFormView(LoginRequiredMixin, View):
+    login_url = "account_signup"
+
     def get(self, request, *args, **kwargs):
         form = ClientForm(
             initial={

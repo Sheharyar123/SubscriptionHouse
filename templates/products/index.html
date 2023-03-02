@@ -102,7 +102,13 @@
 								<div class="pricing_price darkcolor">
 								<span class="pricing_currency">
 								<b>${{ product.price }}</b></span>/
-								{% if product.is_featured %}6month{% else %}month{% endif %}
+								{% if product.is_featured and product.title|title == "Get Hired" %}
+								14days
+								{% elif product.is_featured %}
+								6months
+								{% else %}
+								month
+								{% endif %}
 							</div>
 							<p style="font-size: 30px;">{{ product.description|safe|linebreaks }}</p>
 							<a class="btn_common btn_{{ product.background_type }}" 

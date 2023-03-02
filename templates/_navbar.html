@@ -1,6 +1,5 @@
-{% load static %}
-
-{% comment %} <!--Loader-->
+{% load static %} {% comment %}
+<!--Loader-->
 <div class="loader">
   <div class="spinner centered">
     <div class="spinner-container container1">
@@ -17,7 +16,8 @@
     </div>
   </div>
 </div>
-<!--Loader ends--> {% endcomment %}
+<!--Loader ends-->
+{% endcomment %}
 
 <!-- header -->
 <header class="site-header">
@@ -51,22 +51,32 @@
             <a class="nav-link" href="{% url 'products:index' %}#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'products:product_list' %}">Packages</a>
+            <a class="nav-link" href="{% url 'products:product_list' %}"
+              >Packages</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'products:index' %}#reviews">Testimonials</a>
+            <a class="nav-link" href="{% url 'products:index' %}#reviews"
+              >Testimonials</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'products:index' %}#aboutus">Services</a>
+            <a class="nav-link" href="{% url 'products:index' %}#aboutus"
+              >Services</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'products:index' %}#gallery">About</a>
+            <a class="nav-link" href="{% url 'products:index' %}#gallery"
+              >About</a
+            >
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'products:index' %}#faq">FAQs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'products:index' %}#contactus">contact</a>
+            <a class="nav-link" href="{% url 'products:index' %}#contactus"
+              >contact</a
+            >
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">
@@ -74,10 +84,14 @@
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_login' %}">Log In</a>
+            <a
+              class="nav-link"
+              href="{% url 'account_login' %}?next={{request.path}}"
+              >Log In</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+            <a class="nav-link" href="{% url 'account_signup' %}?next={{request.path}}">Register</a>
           </li>
           {% endif %}
         </ul>
@@ -86,29 +100,39 @@
       <div class="nav-social">
         <ul class="social_icon noborder">
           <li>
-            <a class="facebook" href="https://www.facebook.com/subscriptionshouse" target="_blank"
+            <a
+              class="facebook"
+              href="https://www.facebook.com/subscriptionshouse"
+              target="_blank"
               ><i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a href="https://www.linkedin.com/company/subscriptions-house/" target="_blank"><i class="fa fa-linkedin"></i> </a> 
+            <a
+              href="https://www.linkedin.com/company/subscriptions-house/"
+              target="_blank"
+              ><i class="fa fa-linkedin"></i>
+            </a>
           </li>
         </ul>
       </div>
 
-      {% comment %} <!--side menu open button-->
+      {% comment %}
+      <!--side menu open button-->
       <a
         href="javascript:void(0)"
         class="d-none d-lg-inline-block sidemenu_btn"
         id="sidemenu_toggle"
       >
         <span></span> <span></span> <span></span>
-      </a> {% endcomment %}
+      </a>
+      {% endcomment %}
     </div>
   </nav>
 
   <!-- side menu -->
-  {% comment %} <div class="side-menu">
+  {% comment %}
+  <div class="side-menu">
     <div class="inner-wrapper">
       <span class="btn-close" id="btn_sideNavClose"><i></i><i></i></span>
       <a class="navbar-brand" href="/">
@@ -120,33 +144,51 @@
             <a class="nav-link pagescroll" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Services</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}"
+              >Services</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">About</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}"
+              >About</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Testimonials</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}"
+              >Testimonials</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Packages</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}"
+              >Packages</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">FAQs</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}"
+              >FAQs</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'products:index' %}">Contact</a>
+            <a class="nav-link pagescroll" href="{% url 'products:index' %}"
+              >Contact</a
+            >
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'account_logout' %}">Log Out</a>
+            <a class="nav-link pagescroll" href="{% url 'account_logout' %}"
+              >Log Out</a
+            >
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'account_login' %}">Log In</a>
+            <a class="nav-link pagescroll" href="{% url 'account_login' %}"
+              >Log In</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link pagescroll" href="{% url 'account_signup' %}">Register</a>
+            <a class="nav-link pagescroll" href="{% url 'account_signup' %}"
+              >Register</a
+            >
           </li>
           {% endif %}
         </ul>
@@ -166,7 +208,8 @@
         <p class="darkcolor">&copy; 2023 Subscriptions House.</p>
       </div>
     </div>
-  </div> {% endcomment %}
+  </div>
+  {% endcomment %}
   <a id="close_side_menu" href="javascript:void(0);"></a>
 </header>
 <!-- header -->

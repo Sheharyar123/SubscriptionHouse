@@ -25,6 +25,7 @@
             <div class="text-center">
               <p>Already have an account? <a href="{% url 'account_login' %}" class="auth-form-link">Log In</a></p>
             </div>
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ request.GET.next }}" />
           </form>
           {% if form.errors %}
             {% for field in form %}
