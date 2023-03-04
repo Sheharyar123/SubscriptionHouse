@@ -30,7 +30,7 @@
 			   </div>
 
 			   <!-- LAYER NR. 1 -->
-			   <div class="tp-caption tp-resizeme" data-x="['center','center','center','center']"
+			   {% comment %} <div class="tp-caption tp-resizeme" data-x="['center','center','center','center']"
 				  data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
 				  data-voffset="['-100','-100','-100','-100']" data-whitespace="nowrap" data-responsive_offset="on"
 				  data-width="['none','none','none','none']" data-type="text"
@@ -39,7 +39,7 @@
 				  data-transform_out="s:1000;e:Power3.easeInOut;s:1000;e:Power3.easeInOut;" data-start="1000"
 				  data-splitin="none" data-splitout="none">
 				  <h1 class="text-capitalize font-xlight whitecolor font-fourty">Get All Premium</h1>
-			   </div>
+			   </div> {% endcomment %}
 			   <div class="tp-caption tp-resizeme" data-x="['center','center','center','center']"
 				  data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
 				  data-voffset="['-30','-30','-30','-30']" data-whitespace="nowrap" data-responsive_offset="on"
@@ -49,7 +49,7 @@
 				  data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;"
 				  data-mask_out="x:inherit;y:inherit;s:inherit;e:inherit;" data-start="1200" data-splitin="none"
 				  data-splitout="none">
-				  <h1 class="text-capitalize font-medium whitecolor text_on_mobile subscription-text">Subscriptions At Low Prices!</h1>
+				  <h1 class="text-capitalize font-medium whitecolor text_on_mobile subscription-text">Land Your Dream Job!</h1>
 			   </div>
 			   <div class="tp-caption  tp-resizeme text-center" data-x="['center','center','center','center']"
 				  data-hoffset="['0','0','0','0']" data-y="['middle','middle','middle','middle']"
@@ -112,11 +112,7 @@
 							</div>
 							<p style="font-size: 30px;">{{ product.description|safe|linebreaks }}</p>
 							<a class="btn_common btn_{{ product.background_type }}" 
-							   href={% if product.title|title == "Get Hired" and product.is_featured and not request.user.client %}
-								{% url 'products:client_form' %}
-						   		{% else %}
-								{{ product.get_absolute_url }}
-						   		{% endif %}
+							   href="{{ product.get_absolute_url }}"
 								>Choose Plan
 							</a>
 						</div>

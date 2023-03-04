@@ -18,14 +18,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env.str("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default=False)
-
+# DEBUG = env.bool("DEBUG", default=False)
+DEBUG = True
 # ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 ALLOWED_HOSTS = [
     "127.0.0.1",
     "localhost",
     "subscriptionshouse.fly.dev",
     "subscriptionshouse.com",
+    "4100-101-53-247-21.in.ngrok.io",
 ]
 
 
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     "accounts.apps.AccountsConfig",
     "products.apps.ProductsConfig",
     "payments.apps.PaymentsConfig",
+    "orders.apps.OrdersConfig",
 ]
 
 MIDDLEWARE = [
@@ -75,6 +77,7 @@ TEMPLATES = [
                 "django.template.context_processors.request",
                 "django.contrib.auth.context_processors.auth",
                 "django.contrib.messages.context_processors.messages",
+                "products.context_processors.get_paypal_client_id",
             ],
         },
     },
@@ -146,7 +149,7 @@ AUTHENTICATION_BACKENDS = [
     "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-SITE_ID = 1
+SITE_ID = 2
 ACCOUNT_AUTHENTICATION_METHOD = "email"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -169,7 +172,7 @@ ACCOUNT_FORMS = {
 # Paypal Settings
 PAYPAL_RECEIVER_EMAIL = env.str("PAYPAL_RECEIVER_EMAIL")
 PAYPAL_TEST = env.bool("PAYPAL_TEST")
-
+PAYPAL_CLIENT_ID = env.str("PAYPAL_CLIENT_ID")
 # SMTP Settings
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
@@ -177,24 +180,26 @@ EMAIL_USE_TLS = True
 EMAIL_PORT = 587
 EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
 EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
+OWNER_EMAIL = env.str("OWNER_EMAIL")
 
 CSRF_TRUSTED_ORIGINS = [
     "https://subscriptionshouse.fly.dev",
     "http://subscriptionshouse.fly.dev",
     "https://subscriptionshouse.com",
     "http://subscriptionshouse.com",
+    "https://4100-101-53-247-21.in.ngrok.io",
 ]
-# CSRF_TRUSTED_ORIGINS = ["https://*.fly.dev"]
+
 # Security Settings
-SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
-SECURE_HSTS_SECONDS = env.int("DJANGO_SECURE_HSTS_SECONDS", default=2592000)  # 30 days
-SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
-    "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True
-)
-SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
-SESSION_COOKIE_SECURE = env.bool("DJANGO_SESSION_COOKIE_SECURE", default=True)
-CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=True)
-SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+# SECURE_SSL_REDIRECT = env.bool("DJANGO_SECURE_SSL_REDIRECT", default=True)
+# SECURE_HSTS_SECONDS = env.int("DJANGO_SECURE_HSTS_SECONDS", default=2592000)  # 30 days
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = env.bool(
+#     "DJANGO_SECURE_HSTS_INCLUDE_SUBDOMAINS", default=True
+# )
+# SECURE_HSTS_PRELOAD = env.bool("DJANGO_SECURE_HSTS_PRELOAD", default=True)
+# SESSION_COOKIE_SECURE = env.bool("DJANGO_SESSION_COOKIE_SECURE", default=True)
+# CSRF_COOKIE_SECURE = env.bool("DJANGO_CSRF_COOKIE_SECURE", default=True)
+# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 
 # Cloudinary Configurations
@@ -203,3 +208,6 @@ cloudinary.config(
     api_key=env.str("CLOUDINARY_API_KEY"),
     api_secret=env.str("CLOUDINARY_SECRET_KEY"),
 )
+
+# To unblock popups
+SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin-allow-popups"

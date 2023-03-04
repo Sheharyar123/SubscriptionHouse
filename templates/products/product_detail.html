@@ -29,10 +29,9 @@
                             {% else %}
                             month
                             {% endif %}
-                        
                     </div>
                     <p>{{ product.description|safe|linebreaks }}</p>
-                    <form action="{{ action }}" method="post">
+                    {% comment %} <form action="{{ action }}" method="post">
                       <input type="hidden" name="cmd" value="_xclick" id="id_cmd">
                       <input type="hidden" name="charset" value="utf-8" id="id_charset">
                       <input type="hidden" name="currency_code" value="USD" id="id_currency_code">
@@ -47,11 +46,60 @@
                       <div class="paypal">
                         <input type="image" src="{% static 'images/paypal-logo.png' %}" name="submit" class="paypal-logo">
                       </div>
-                    </form>
+                    </form> {% endcomment %}
+                    {% comment %} <div id="paypal-button-container"></div> {% endcomment %}
+                    {% comment %} <div id="smart-button-container">
+                      <div style="text-align: center;">
+                        <div id="paypal-button-container"></div>
+                      </div>
+                    </div> {% endcomment %}
+                    <div id="paypal-button-container"></div>
             </div>
           </div>
         </div>
     </div>
   </div>
+
+  <script>
+    const price = "{{ product.price }}";
+    function initPayPalButton() {
+      paypal.Buttons({
+        style: {
+          shape: 'rect',
+          color: 'blue',
+          layout: 'vertical',
+          label: 'paypal',
+          
+        },
+    
+        createOrder: function(data, actions) {
+          return actions.order.create({
+            purchase_units: [{"amount":{"currency_code":"USD","value":price}}]
+          });
+        },
+    
+        onApprove: function(data, actions) {
+          return actions.order.capture().then(function(orderData) {
+            
+            // Full available details
+            console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+    
+            // Show a success message within this page, e.g.
+            const element = document.getElementById('paypal-button-container');
+            element.innerHTML = '';
+            element.innerHTML = '<h3>Thank you for your payment!</h3>';
+    
+            // Or go to another URL:  actions.redirect('thank_you.html');
+            
+          });
+        },
+    
+        onError: function(err) {
+          console.log(err);
+        }
+      }).render('#paypal-button-container');
+    }
+    initPayPalButton();
+  </script>
 
 {% endblock content %}

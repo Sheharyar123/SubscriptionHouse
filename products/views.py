@@ -1,11 +1,12 @@
-from paypal.standard.forms import PayPalPaymentsForm
+import time
 from django.contrib import messages
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 from django.core.mail import send_mail
 from django.shortcuts import get_object_or_404, render, redirect
 from django.urls import reverse
 from django.views.generic import View, ListView, DetailView
 from django.conf import settings
+from paypal.standard.forms import PayPalPaymentsForm
 from .models import Product, OrderItem, Client
 from .forms import ContactForm, ClientForm
 from .utils import special_product
@@ -68,14 +69,22 @@ class ProductDetailView(LoginRequiredMixin, DetailView):
             product=product, user=user, paid=False
         )
         host = self.request.get_host()
+        return_url = (
+            f"http://{host}{reverse('products:client_form')}"
+            if product.title.title() == "Get Hired"
+            and product.is_featured
+            and not Client.objects.filter(user=user).exists()
+            else f"http://{host}{reverse('payments:payment_completed')}"
+        )
         paypal_dict = {
-            "business": settings.PAYPAL_RECEIVER_EMAIL,
+            # "business": settings.PAYPAL_RECEIVER_EMAIL,
+            "business": "sb-47n431224883123@business.example.com",
             "amount": order_item.product.price,
             "item_name": order_item.product.title,
             "invoice": str(order_item.id),
             "currency_code": "USD",
             "notify_url": f"http://{host}{reverse('paypal-ipn')}",
-            "return": f"http://{host}{reverse('payments:payment_completed')}",
+            "return": return_url,
             "cancel_return": f"http://{host}{reverse('payments:payment_cancelled')}",
         }
         form = PayPalPaymentsForm(initial=paypal_dict)
@@ -92,15 +101,23 @@ class ClientFormView(LoginRequiredMixin, View):
     login_url = "account_signup"
 
     def get(self, request, *args, **kwargs):
-        form = ClientForm(
-            initial={
-                "name": request.user.name,
-                "email": request.user.email,
-                "phone_no": request.user.phone_no,
-            }
+        product = Product.objects.get(title="Get Hired", is_featured=True)
+        order_item = OrderItem.objects.filter(
+            product=product, user=request.user, paid=True
         )
-        context = {"form": form}
-        return render(request, "products/client_form.html", context)
+        if order_item.exists():
+            form = ClientForm(
+                initial={
+                    "name": request.user.name,
+                    "email": request.user.email,
+                    "phone_no": request.user.phone_no,
+                }
+            )
+            context = {"form": form}
+            return render(request, "products/client_form.html", context)
+        else:
+            context = {"product": product}
+            return render(request, "403.html", context)
 
     def post(self, request, *args, **kwargs):
         form = ClientForm(request.POST, request.FILES)
@@ -119,7 +136,7 @@ class ClientFormView(LoginRequiredMixin, View):
             client_form.product = product
             client_form.save()
             messages.success(request, "Your form was submitted successfully!")
-            return redirect(product.get_absolute_url())
+            return redirect("products:product_list")
         else:
             context = {"form": form}
             return render(request, "products/client_form.html", context)

@@ -40,7 +40,7 @@ def payment_notification(sender, **kwargs):
                 subject="Email from Subscriptions House",
                 message=f"{user.name} has bought the following product.\n'{order_item.product.title} - {order_item.product.plan_type} - ${order_item.product.price}'.\nCustomer's email is {user.email} and phone no is {user.phone_no}",
                 from_email=settings.EMAIL_HOST_USER,
-                recipient_list=["talha.sharif380@gmail.com"],
+                recipient_list=[settings.OWNER_EMAIL],
                 fail_silently=False,
             )
 

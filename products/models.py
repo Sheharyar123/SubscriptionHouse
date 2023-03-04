@@ -69,8 +69,10 @@ class OrderItem(models.Model):
 
     @property
     def valid_till(self):
-        if self.product.is_featured:
+        if self.product.is_featured and self.title.title() != "Get Hired":
             valid_date = self.created_on + timedelta(days=180)
+        elif self.product.is_featured and self.title.title() == "Get Hired":
+            valid_date = self.created_on + timedelta(days=14)
         else:
             valid_date = self.created_on + timedelta(days=30)
         return valid_date

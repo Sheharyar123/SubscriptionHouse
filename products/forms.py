@@ -13,7 +13,7 @@ class ContactForm(forms.Form):
         max_length=255,
         required=True,
         widget=forms.EmailInput(
-            attrs={"placehbolder": "Email", "class": "form-control"}
+            attrs={"placeholder": "Email", "class": "form-control"}
         ),
     )
     phone_no = forms.CharField(
