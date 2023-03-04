@@ -7,6 +7,7 @@ urlpatterns = [
     path("subscriptions-house-admin/", admin.site.urls),
     path("accounts/", include("allauth.urls")),
     path("", include("products.urls")),
+    path("", include("orders.urls")),
     path("paypal/", include("paypal.standard.ipn.urls")),
     path("payments/", include("payments.urls")),
 ]

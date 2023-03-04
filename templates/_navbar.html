@@ -78,7 +78,7 @@
               >contact</a
             >
           </li>
-          {% if request.user.is_authenticated %}
+          {% comment %} {% if request.user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_logout' %}">Log Out</a>
           </li>
@@ -93,7 +93,7 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'account_signup' %}?next={{request.path}}">Register</a>
           </li>
-          {% endif %}
+          {% endif %} {% endcomment %}
         </ul>
       </div>
 

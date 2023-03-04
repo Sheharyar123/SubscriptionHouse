@@ -49,7 +49,7 @@
                                 </div>
                                 <p>{{ product.description|safe|linebreaks }}</p>
                                 <a class="btn_common btn_{{ product.background_type }}" 
-                                   href="{{ product.get_absolute_url }}"
+                                   href="{% url 'orders:checkout' product.id %}"
                                     >Choose Plan</a
                                 >
                             </div>
